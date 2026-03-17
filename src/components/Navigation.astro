@@ -1,0 +1,200 @@
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
+
+export interface Props {
+  currentPath?: string;
+}
+
+const { currentPath = '' } = Astro.props;
+
+const locale = Astro.currentLocale || 'hr';
+const prefix = locale === 'en' ? '/en' : '';
+
+// helper za active state (normalizira trailing slash)
+const normalize = (p: string) => (p.endsWith('/') ? p : p + '/');
+
+// Meniji: statički linkovi po jeziku (ne koristi getRelativeLocaleUrl ovdje)
+const navigation = locale === 'en'
+  ? [
+      { name: 'Home',      href: `${prefix}/` },
+      { name: 'Education', href: `${prefix}/education/` },
+      { name: 'Events',    href: `${prefix}/events/` },
+      { name: 'Order',     href: `${prefix}/order/` },
+    ]
+  : [
+      { name: 'Naslovnica', href: `${prefix}/` },
+      { name: 'Edukacija',  href: `${prefix}/edukacija/` },
+      { name: 'Događanja',  href: `${prefix}/dogadjanja/` },
+      { name: 'Naruči',     href: `${prefix}/naruci/` },
+    ];
+
+// Language toggle: ručna mapping tablica za sve stranice
+const pathMappings = {
+  '/': '/en/',
+  '/edukacija/': '/en/education/',
+  '/dogadjanja/': '/en/events/',
+  '/naruci/': '/en/order/',
+  '/recenzije/': '/en/reviews/',
+  '/o-prirucniku/': '/en/about-manual/',
+  '/o-autorici/': '/en/about-author/',
+  '/uvod/': '/en/introduction/',
+  '/kontakt/': '/en/contact/',
+  '/pozadine/': '/en/wallpapers/',
+  '/en/': '/',
+  '/en/education/': '/edukacija/',
+  '/en/events/': '/dogadjanja/',
+  '/en/order/': '/naruci/',
+  '/en/reviews/': '/recenzije/',
+  '/en/about-manual/': '/o-prirucniku/',
+  '/en/about-author/': '/o-autorici/',
+  '/en/introduction/': '/uvod/',
+  '/en/contact/': '/kontakt/',
+  '/en/wallpapers/': '/pozadine/',
+};
+
+const currentPathNormalized = normalize(currentPath);
+const mappedPath = pathMappings[currentPathNormalized];
+
+const switchToHR = mappedPath ? (mappedPath.startsWith('/en/') ? mappedPath.replace('/en/', '/') : mappedPath) : '/';
+const switchToEN = mappedPath ? (mappedPath.startsWith('/en/') ? mappedPath : `/en${mappedPath}`) : '/en/';
+---
+
+<nav class="bg-white/90 backdrop-blur-md shadow-sm border-b border-botanical-200 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <!-- Logo -->
+      <div class="flex-shrink-0">
+        <a href={`${prefix}/`} class="text-2xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent hover:from-botanical-700 hover:to-nature-600 transition-all duration-300">
+          Fragrant Signatures
+        </a>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-8">
+          {navigation.map((item) => (
+            <a
+              href={item.href}
+              class={`px-3 py-2 rounded-md text-sm font-bold uppercase tracking-wide transition-all duration-300 hover:scale-105 ${
+                normalize(currentPath) === normalize(item.href)
+                  ? 'text-botanical-600 bg-botanical-50 shadow-sm'
+                  : 'text-botanical-800 hover:text-botanical-600 hover:bg-botanical-50'
+              }`}
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Language Switcher -->
+      <div class="hidden md:flex items-center space-x-2">
+        <a 
+          href={switchToHR}
+          class={`px-3 py-1 text-sm font-medium transition-colors duration-200 rounded-md ${
+            locale === 'hr' 
+              ? 'text-botanical-600 bg-botanical-50' 
+              : 'text-botanical-500 hover:text-botanical-600 hover:bg-botanical-50'
+          }`}
+        >
+          HR
+        </a>
+        <span class="text-botanical-300">|</span>
+        <a 
+          href={switchToEN}
+          class={`px-3 py-1 text-sm font-medium transition-colors duration-200 rounded-md ${
+            locale === 'en' 
+              ? 'text-botanical-600 bg-botanical-50' 
+              : 'text-botanical-500 hover:text-botanical-600 hover:bg-botanical-50'
+          }`}
+        >
+          EN
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden">
+        <button
+          type="button"
+          class="mobile-menu-button bg-botanical-100 inline-flex items-center justify-center p-2 rounded-md text-botanical-600 hover:text-botanical-700 hover:bg-botanical-50 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-botanical-500 transition-all duration-300"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <!-- Hamburger icon -->
+          <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="md:hidden mobile-menu hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-botanical-200">
+      {navigation.map((item) => (
+        <a
+          href={item.href}
+          class={`block px-3 py-2 rounded-md text-base font-bold uppercase tracking-wide transition-all duration-300 ${
+            normalize(currentPath) === normalize(item.href)
+              ? 'text-botanical-600 bg-botanical-50'
+              : 'text-botanical-800 hover:text-botanical-600 hover:bg-botanical-50'
+          }`}
+        >
+          {item.name}
+        </a>
+      ))}
+      
+      <!-- Mobile Language Switcher -->
+      <div class="pt-4 border-t border-botanical-200">
+        <div class="flex items-center justify-center space-x-4">
+          <a 
+            href={switchToHR}
+            class={`px-3 py-1 text-sm font-medium transition-colors duration-200 rounded-md ${
+              locale === 'hr' 
+                ? 'text-botanical-600 bg-botanical-50' 
+                : 'text-botanical-500 hover:text-botanical-600 hover:bg-botanical-50'
+            }`}
+          >
+            HR
+          </a>
+          <span class="text-botanical-300">|</span>
+          <a 
+            href={switchToEN}
+            class={`px-3 py-1 text-sm font-medium transition-colors duration-200 rounded-md ${
+              locale === 'en' 
+                ? 'text-botanical-600 bg-botanical-50' 
+                : 'text-botanical-500 hover:text-botanical-600 hover:bg-botanical-50'
+            }`}
+          >
+            EN
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const btn = document.querySelector('.mobile-menu-button');
+    const menu = document.querySelector('.mobile-menu');
+    if (!btn || !menu) return;
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      menu.classList.toggle('hidden');
+      const icon = btn.querySelector('svg');
+      if (icon) icon.style.transform = expanded ? 'rotate(0deg)' : 'rotate(90deg)';
+    });
+  });
+</script>
+
+<style>
+  .mobile-menu { animation: slideDown 0.3s ease-out; }
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+</style>

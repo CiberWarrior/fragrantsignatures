@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="Recenzije - Fragrant Signatures" 
+  description="Pročitajte recenzije o Fragrant Signatures: Priručniku za kreiranje prirodnih parfema od stručnjaka i čitatelja."
+  currentPath="/recenzije"
+>
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-6xl">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent mb-6">
+          Recenzije
+        </h1>
+        <p class="text-xl text-botanical-600 max-w-3xl mx-auto leading-relaxed">
+          Otkrijte što stručnjaci i čitatelji kažu o Fragrant Signatures
+        </p>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="space-y-12">
+        <!-- Review 1 - Jennifer Peace Rhind -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Jennifer Peace Rhind</h3>
+            <p class="text-botanical-600 font-medium">konzultantica za eterična ulja, autorica knjiga o eteričnim uljima i njihovoj primjeni</p>
+          </div>
+          <blockquote class="text-lg text-ink-800 italic leading-relaxed text-center">
+            U kojoj god fazi svoje cjeloživotne mirisne avanture se nalazili, trebate cijeniti ovu lijepo napisanu knjigu. Slobodankin pedantan pristup osigurava da budu uključeni svi aspekti prirodne parfimeristike – njezini korijeni, teorijske perspektive i praksa, uz istovremeno poticanje svjesnosti i kreativnosti. Priručnik o kreiranju parfema je jasan i inspirativan, prilagođava klasične metode raznim oblicima prirodnih parfema. Autoričino opsežno znanje, iskustvo, umijeće i strast blistaju na svakoj stranici. I ljubiteljima parfema i kreatorima početnicima ova knjiga otvara cijeli novi svijet mogućnosti. Onima koji kreću na to putovanje knjiga pruža dojam da na svakom koraku mentorica hoda uz njih. Profesionalci mogu naći mnogo toga što će ih oduševiti i nadahnuti, od primjera izvrsnih opisa mirisa do uputa za izradu vlastitih ekstrakata i tinktura od sirovina ubranih u prirodi. Dobrodošao je i naglasak na ekologiji, održivosti i etički proizvedenim prirodnim parfemima. Tour de force, Mirisni potpisi su mnogo više od vodiča ili priručnika – knjiga je predodređena da postane klasičan i važan tekst o prirodnoj i botaničkoj parfimeristici.
+          </blockquote>
+        </div>
+
+        <!-- Review 2 - Hana Tisserand -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Hana Tisserand</h3>
+            <p class="text-botanical-600 font-medium">Essential Oil Educator</p>
+          </div>
+          <blockquote class="text-lg text-ink-800 italic leading-relaxed text-center">
+            Želite li se prihvatiti posla i početi kreirati vlastite parfeme? Ako je tako, ovo je knjiga za vas. S.P. se oslonila na svoje dugogodišnje iskustvo u poučavanju ljudi umijeću kreiranja parfema i nudi vam sjajan priručnik. On će vam pomoći da organizirate svoje mirisne materijale, uredite svoj radni prostor i vodite korisne bilješke dok eksperimentirate i tražite baš onu pravu, dobru notu. Knjiga je funkcionalna i puna odličnih, detaljnih informacija o različitim mirisnim grupama, osnovnim materijalima. Cijenim fokusiranost knjige na praktičnost i detaljne informacije. Podudara se s pristupom Tisserand Instituta – osposobiti studente da se otpute u vlastitu avanturu opremljeni najboljim dostupnim alatima. Odličan način da se zaroni u kreiranje parfema.
+          </blockquote>
+        </div>
+
+        <!-- Review 3 - Gordana Gorinšek -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Gordana Gorinšek</h3>
+            <p class="text-botanical-600 font-medium">mag. ing. fitomedicine</p>
+          </div>
+          <blockquote class="text-lg text-ink-800 italic leading-relaxed text-center">
+            Autorica vrlo nesebično ogoljuje umjetnost kreiranja parfema, no time njena kompleksnost i mističnost ne gube na izražaju i snazi. Vrlo vješto vodi čitatelja kroz postulate i zahtjeve parfimeristike, strpljivo obrazlažući svaki korak u kreiranju mirisa, pokušavajući kroz riječi približiti čitatelju ono što njuh osjeća. Upoznaje čitatelja sa stručnom terminologijom i procesima, nastojeći ga poučiti novoj vještini. Priručnik sadrži vrlo vrijedne podatke iz teorije i prakse, koje će najviše vrednovati oni koji se žele izdići iznad pukog koketiranja s mirisima. Namijenjen je svakome tko želi izbliza upoznati svijet kreiranja mirisa i daje ključ u ruke svakome tko se poželi samostalno okušati u njegovom kreiranju.
+          </blockquote>
+        </div>
+
+        <!-- Review 4 - Marco Valussi -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Marco Valussi</h3>
+            <p class="text-botanical-600 font-medium">bacc. fitoterapije, konzultant u procesu destilacije</p>
+          </div>
+          <div class="text-lg text-ink-800 leading-relaxed space-y-6">
+            <p class="italic">
+              Kad sam bio zamoljen da napišem recenziju za „Mirisne potpise: Priručnik za kreiranje prirodnih parfema", zabrinuo sam se da možda ne mogu biti najbolji kandidat za recenzenta. Naravno, imam iskustva s mirisnim materijalima, ali je moja stručna ekspertiza u drugim područjima njihove primjene.
+            </p>
+            
+            <p class="italic">
+              Međutim, iako sam nisam parfimer, pitanje reakcija na parfeme je predmet mog posebnog interesa, jer se odnosi na korištenje eteričnih ulja kao olfaktornih podražaja koji mijenjaju raspoloženje. I zapravo sam, u svojim predavanjima, često koristio primjer parfimera i njihove interakcije s klijentima, kako bih ilustrirao složenu prirodu olfaktornog iskustva i potrebu individualiziranog pristupa.
+            </p>
+            
+            <p class="italic">
+              Budući da sam u svojoj karijeri mnogo naučio iz tekstova i od ljudi koji se bave parfimeristikom, odlučio sam da bih mogao pokušati. I nisam se razočarao. Priručnik je doista priručnik, i svom se cilju jasno posvećuje od samog početka, a to je pomoći budućim parfimerima da organiziraju svoj put u taj svijet.
+            </p>
+            
+            <p class="italic">
+              Zapravo, Uvod vam vrlo pragmatično pomaže koristiti priručnik, objašnjavajući sadržaj i korisnost svakog poglavlja, te usmjeravajući čitatelja na pravi sadržaj. Bio sam impresioniran količinom praktičnog znanja koje je ponuđeno na vrlo profesionalan i lako razumljiv način.
+            </p>
+            
+            <p class="italic">
+              Općenito, svidjela mi se upotreba okvira s dodatnim uvidima, koji su omogućili da glavni tekst nesmetano teče, a da onima koje to zanima pruže više detalja. Bilo je stvarno zanimljivo i fascinantno saznati najsitnije detalje o svakodnevnom radu parfimera.
+            </p>
+            
+            <p class="italic">
+              Priručnik je pun vrlo korisnih i praktičnih savjeta od samog početka, kao npr. kako nabavljati/kupovati mirisne materijale, kako organizirati svoju paletu, kako iskoristiti tečajeve, ponuđene uzorke, pomoć prijatelja i kolega aromaterapeuta i sl. da bi se upoznalo što više materijala bez pretjeranih financijskih ulaganja.
+            </p>
+            
+            <p class="italic">
+              Iako se radi o priručniku s tipičnom strukturom i tonom, punom praktičnih i tehničkih savjeta, tekst ipak uspijeva ostati čitljiv i zanimljiv. Očigledno je teorijsko znanje i praktična kompetencija autorice, ali i njezina ljubav i radost dok priča o mirisima.
+            </p>
+            
+            <p class="italic">
+              Kao osoba koja se bavi tehničkim aspektima proizvodnje bio sam u iskušenju da počnem ispunjavati upitnike i doživim svoja eterična ulja iz ove perspektive. A kao netko tko radi u ekstrakciji i destilaciji, stvarno cijenim recepte i prijedloge za ekstrakciju.
+            </p>
+            
+            <p class="italic">
+              Svidjelo mi se i to što sintetički parfemi nisu demonizirani, već su navedene razlike i prednosti, kao i nedostaci oba pristupa. Svidio mi se način na koji je poglavlje o povijesti uspjelo predstaviti fascinantnu povijest mirisnih supstanci i načina na koje ih je čovječanstvo koristilo, a da se pritom nije zaglibilo u previše detalja.
+            </p>
+            
+            <p class="italic">
+              I posljednje, ali svakako ne manje važno, jako cijenim naglasak koji Slobodanka stavlja na ekološku i društvenu odgovornost prilikom nabave materijala, te na potrebu da se bude informiran o zaštićenim vrstama. Također cijenim činjenicu što je bila vrlo jasna po pitanju materijala životinjskog porijekla i što je objasnila ulogu i značenje CITES-a.
+            </p>
+            
+            <p class="italic">
+              Posvećenost ekologiji, održivosti i etici vidljiv je u cijelom tekstu, a tu je i cijelo poglavlje o ekologiji i održivosti. Etički element je, po mom mišljenju, sastavni dio posla i breme koje nosi svatko tko se bavi prirodnom parfimeristikom ili aromaterapijom.
+            </p>
+            
+            <p class="italic">
+              I još napomena kraju: autorica citira knjigu koju volim, Burfieldove Prirodne mirisne materijale, i zapravo, mislim da je ovaj priručnik dobra praktična dopuna Tonyjevom tekstu. Iskreno predlažem ovaj priručnik svima zainteresiranima za ulazak u područje prirodne parfimeristike, a nadam se da ću uskoro vidjeti i njegov talijanski prijevod.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-16 flex justify-center space-x-4">
+        <a 
+          href="/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← Početna
+        </a>
+        <a 
+          href="/o-prirucniku" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          O priručniku →
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

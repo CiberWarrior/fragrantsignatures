@@ -1,0 +1,391 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="O priručniku - Fragrant Signatures" 
+  description="Sadržaj i struktura priručnika za kreiranje prirodnih parfema"
+  currentPath="/o-prirucniku"
+>
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-6xl">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent mb-6">
+          O priručniku
+        </h1>
+        <p class="text-xl text-botanical-700 max-w-3xl mx-auto leading-relaxed mb-8">
+          Kompletan sadržaj i struktura priručnika za kreiranje prirodnih parfema
+        </p>
+        
+        <!-- Book Cover Images -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12 mb-12">
+          <div class="group cursor-pointer" data-image="/images/fs-featured-img.png">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105">
+              <img 
+                src="/images/fs-featured-img.png" 
+                alt="Fragrant Signatures - Hrvatsko izdanje"
+                class="w-80 h-auto md:w-96 lg:w-[28rem]"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="bg-white/90 rounded-full p-3">
+                  <svg class="w-8 h-8 text-botanical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="group cursor-pointer" data-image="/images/NNF_9028-scaled-e1657577863297.jpg">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105">
+              <img 
+                src="/images/NNF_9028-scaled-e1657577863297.jpg" 
+                alt="Fragrant Signatures - Englesko izdanje"
+                class="w-80 h-auto md:w-96 lg:w-[28rem]"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="bg-white/90 rounded-full p-3">
+                  <svg class="w-8 h-8 text-botanical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+        <h2 class="text-3xl font-bold text-botanical-800 mb-8 text-center">Sadržaj priručnika</h2>
+        
+        <!-- Main Chapters Overview -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Chapter 1-5 -->
+          <div class="bg-gradient-to-br from-botanical-50 to-nature-50 rounded-2xl p-6 border border-botanical-100">
+            <h3 class="text-lg font-bold text-botanical-800 mb-4">Osnove (1-5)</h3>
+            <ul class="space-y-2 text-sm text-ink-700">
+              <li>• Povijest prirodnih mirisnih materijala</li>
+              <li>• Doživljaj mirisa</li>
+              <li>• Prirodni vs sintetski parfemi</li>
+              <li>• Materijali u parfimeristici</li>
+              <li>• Proučavanje mirisnih materijala</li>
+            </ul>
+          </div>
+          
+          <!-- Chapter 6-10 -->
+          <div class="bg-gradient-to-br from-nature-50 to-accent-50 rounded-2xl p-6 border border-botanical-100">
+            <h3 class="text-lg font-bold text-botanical-800 mb-4">Tehnike (6-10)</h3>
+            <ul class="space-y-2 text-sm text-ink-700">
+              <li>• Klasifikacije mirisnih materijala</li>
+              <li>• Kreiranje akorda</li>
+              <li>• Proces kreiranja parfema</li>
+              <li>• Drugi oblici parfema</li>
+              <li>• Sigurnost i ograničenja</li>
+            </ul>
+          </div>
+          
+          <!-- Chapter 11-15 -->
+          <div class="bg-gradient-to-br from-accent-50 to-botanical-50 rounded-2xl p-6 border border-botanical-100">
+            <h3 class="text-lg font-bold text-botanical-800 mb-4">Dodatno (11-15)</h3>
+            <ul class="space-y-2 text-sm text-ink-700">
+              <li>• Ekologija i održivost</li>
+              <li>• Svakodnevica kreatora</li>
+              <li>• Rječnik</li>
+              <li>• Literatura</li>
+              <li>• Dodaci i obrasci</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Detailed Table of Contents (Collapsible) -->
+        <div class="border-t border-botanical-200 pt-8">
+          <button 
+            id="toggleDetails" 
+            class="w-full text-left flex items-center justify-between p-4 bg-gradient-to-r from-botanical-50 to-nature-50 rounded-xl border border-botanical-100 hover:from-botanical-100 hover:to-nature-100 transition-all duration-300"
+          >
+            <span class="text-lg font-semibold text-botanical-800">Detaljni sadržaj (15 poglavlja)</span>
+            <svg id="toggleIcon" class="w-6 h-6 text-botanical-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div id="detailedContent" class="hidden mt-4 bg-white/50 rounded-xl p-6 border border-botanical-100">
+            <div class="space-y-4 text-sm leading-relaxed">
+              <div class="font-semibold text-botanical-700 text-lg mb-4">
+                <a href="/uvod/" class="text-botanical-600 hover:text-botanical-800 underline">Uvod</a>
+              </div>
+              
+              <div class="ml-4 space-y-2">
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">1. Kratka povijest korištenja prirodnih mirisnih materijala</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">2. Doživljaj mirisa</div>
+                <div class="ml-6 text-ink-700">2.1. Miris tijela i izbor parfema</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">3. Što je prirodni parfem i zašto ga naučiti kreirati</div>
+                <div class="ml-6 text-ink-700">3.1. Usporedba prirodnih i sintetskih parfema</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">4. Materijali koji se koriste u prirodnoj parfimeristici</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>4.1. Mirisni materijali biljnog porijekla</div>
+                  <div>4.2. Mirisni materijali životinjskog porijekla</div>
+                  <div>4.3. Baze</div>
+                  <div>4.4. Radna paleta</div>
+                  <div class="ml-4">4.4.1. Materijali za početnu paletu</div>
+                  <div>4.5. Nabavljanje mirisnih materijala</div>
+                  <div class="ml-4">4.5.1. Popunjavanje radne palete tinkturama</div>
+                  <div class="ml-8">4.5.1.1. Nekoliko korisnih tinktura</div>
+                  <div>4.6. Procjenjivanje kvalitete</div>
+                  <div>4.7. Čuvanje prirodnih mirisnih materijala</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">5. Proučavanje mirisnih materijala</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>5.1. Prostor i pribor</div>
+                  <div class="ml-4">5.1.1. Evidencija zaliha mirisnih materijala</div>
+                  <div>5.2. Organiziranje rada</div>
+                  <div>5.3. Priprema mirisnih materijala</div>
+                  <div>5.4. Opisivanje mirisa</div>
+                  <div>5.5. Proučavanje materijala radne palete</div>
+                  <div class="ml-4">5.5.1. Obrasci za procjenu mirisnih materijala</div>
+                  <div>5.6. Sumiranje znanja o materijalima u radnoj paleti</div>
+                  <div class="ml-4">5.6.1. Materijali radne palete razvrstani po notama, mirisnim grupama i intenzitetu mirisa</div>
+                  <div>5.7. Učenje po metodi Jeana Carlesa</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">6. Klasifikacije mirisnih materijala</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>6.1. Podjela po notama</div>
+                  <div class="ml-4 space-y-1">
+                    <div>6.1.1. Note mostovi</div>
+                    <div>6.1.2. Note za širenje mirisnog dojma</div>
+                    <div>6.1.3. Dodatne note</div>
+                  </div>
+                  <div>6.2. Podjela po mirisnim grupama</div>
+                  <div class="ml-4 space-y-1">
+                    <div>6.2.1. Razvrstavanje u mirisne grupe po metodi Jeana Carlesa</div>
+                    <div>6.2.2. Mirisne grupe</div>
+                    <div class="ml-4 space-y-1">
+                      <div>6.2.2.1. Animalna grupa</div>
+                      <div>6.2.2.2. Balzamična grupa</div>
+                      <div>6.2.2.3. Citrusna grupa</div>
+                      <div>6.2.2.4. Crnogorična grupa</div>
+                      <div>6.2.2.5. Cvjetna grupa</div>
+                      <div>6.2.2.6. Drvenasta grupa</div>
+                      <div>6.2.2.7. Gurmanska grupa</div>
+                      <div>6.2.2.8. Herbalna grupa</div>
+                      <div>6.2.2.9. Morska grupa</div>
+                      <div>6.2.2.10. Puderasta grupa</div>
+                      <div>6.2.2.11. Rustikalna grupa</div>
+                      <div>6.2.2.12. Voćna grupa</div>
+                      <div>6.2.2.13. Začinska grupa</div>
+                      <div>6.2.2.14. Zelena grupa</div>
+                      <div>6.2.2.15. Zemljana grupa</div>
+                      <div>6.2.2.16. Ostalo</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">7. Kreiranje akorda</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>7.1. Akordi</div>
+                  <div class="ml-4 space-y-1">
+                    <div>7.1.1. Horizontalni akord</div>
+                    <div>7.1.2. Vertikalni akord</div>
+                    <div>7.1.3. Zbirka uspješnih akorda</div>
+                  </div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">8. Proces kreiranja alkoholnog parfema</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>8.1. Plan parfema</div>
+                  <div>8.2. Kreiranje parfema</div>
+                  <div class="ml-4 space-y-1">
+                    <div>8.2.1. Metoda čvrste strukture</div>
+                    <div class="ml-4 space-y-1">
+                      <div>8.2.1.1. Donji akord</div>
+                      <div>8.2.1.2. Srednji akord</div>
+                      <div>8.2.1.3. Gornji akord</div>
+                      <div>8.2.1.4. Omjeri među akordima</div>
+                      <div>8.2.1.5. Formula parfema</div>
+                      <div>8.2.1.6. Rješavanje potencijalnih problema</div>
+                      <div>8.2.1.7. Procjena završenog parfema</div>
+                      <div>8.2.1.8. Post festum intervencije</div>
+                      <div>8.2.1.9. Povećavanje količina</div>
+                    </div>
+                    <div>8.2.2. Metode slobodnijeg načina kreiranja</div>
+                    <div class="ml-4 space-y-1">
+                      <div>8.2.2.1. Rad iz akorda</div>
+                      <div>8.2.2.2. Glavna tema</div>
+                      <div>8.2.2.3. Mašti na volju</div>
+                    </div>
+                  </div>
+                  <div>8.3. Drugačiji sastojci parfema: baze</div>
+                  <div class="ml-4 space-y-1">
+                    <div>8.3.1. Kreiranje baza</div>
+                    <div class="ml-4">8.3.1.1. Zbirka baza</div>
+                  </div>
+                  <div>8.4. Klasifikacija alkoholnih parfema prema koncentraciji</div>
+                  <div>8.5. Obitelji parfema</div>
+                  <div class="ml-4 space-y-1">
+                    <div>8.5.1. Cvjetna obitelj</div>
+                    <div>8.5.2. Amber obitelj</div>
+                    <div>8.5.3. Ciparska obitelj</div>
+                    <div>8.5.4. Papratna obitelj</div>
+                    <div>8.5.5. Citrusna obitelj</div>
+                  </div>
+                  <div>8.6. Čuvanje prirodnih parfema</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">9. Drugi oblici parfema</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>9.1. Uljni parfem</div>
+                  <div class="ml-4">9.1.1. Izrada macerata</div>
+                  <div>9.2. Kruti parfem</div>
+                  <div class="ml-4">9.2.1. Izrada enfleurage pomade</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">10. Sigurnost</div>
+                <div class="ml-6 text-ink-700">10.1. Ograničenja: IFRA-ine directive</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">11. Ekologija i održivost</div>
+                <div class="ml-6 text-ink-700">11.1. Ugrožene vrste</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">12. Svakodnevica kreatora prirodnih parfema</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">13. Rječnik</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">14. Literatura</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>14.1. Knjige</div>
+                  <div>14.2. Članci, on-line izvori, privatna komunikacija</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">15. Dodaci</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>15.1. Hrvatsko-latinski popis mirisnih materijala</div>
+                  <div>15.2. Dobavljači</div>
+                  <div>15.3. Rezervni obrasci</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Download Section -->
+        <div class="mt-8 text-center">
+          <a 
+            href="/documents/Rezervni obrasci_HR.pdf" 
+            download
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-botanical-600 to-botanical-700 text-white rounded-xl shadow-lg font-medium"
+          >
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Preuzmi rezervne obrasce
+          </a>
+        </div>
+      </div>
+      
+      <!-- Spacer -->
+      <div class="mt-16"></div>
+      
+      <!-- Navigation -->
+      <div class="mt-16 flex justify-between items-center">
+        <a 
+          href="/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← Početna
+        </a>
+        
+        <a 
+          href="/o-autorici/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          O autorici →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl max-h-full">
+      <button 
+        id="closeModalBtn"
+        class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="modalImage" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl" />
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle detailed content
+      const toggleBtn = document.getElementById('toggleDetails');
+      const detailedContent = document.getElementById('detailedContent');
+      const toggleIcon = document.getElementById('toggleIcon');
+      
+      toggleBtn.addEventListener('click', function() {
+        detailedContent.classList.toggle('hidden');
+        toggleIcon.classList.toggle('rotate-180');
+      });
+      
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const closeBtn = document.getElementById('closeModalBtn');
+
+      // Add click listeners to image containers
+      const imageContainers = document.querySelectorAll('[data-image]');
+      imageContainers.forEach(container => {
+        container.addEventListener('click', function() {
+          const imageSrc = this.getAttribute('data-image');
+          openModal(imageSrc);
+        });
+      });
+
+      // Close modal with X button
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      // Close modal when clicking outside the image
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    });
+
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
+
+</Layout>

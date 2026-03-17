@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/LayoutEN.astro';
+---
+
+<Layout 
+  title="Reviews - Fragrant Signatures" 
+  description="Read reviews and testimonials about Fragrant Signatures: Manual for Creating Natural Perfumes from experts and readers."
+  currentPath="/en/reviews"
+>
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-6xl">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent mb-6">
+          Reviews
+        </h1>
+        <p class="text-xl text-botanical-600 max-w-3xl mx-auto leading-relaxed">
+          Discover what experts and readers say about Fragrant Signatures
+        </p>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="space-y-12">
+        <!-- Review 1 - Jennifer Peace Rhind -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Jennifer Peace Rhind</h3>
+            <p class="text-botanical-600 font-medium">Essential Oils Consultant, Author of books on essential oils and their application</p>
+          </div>
+          <blockquote class="text-lg text-ink-800 italic leading-relaxed text-center">
+            Whatever stage you are at on your lifelong fragrance adventure, this beautifully written book is one to be treasured. Slobodanka's meticulous approach ensures that all aspects of natural perfumery – its origins, theoretical perspectives and practice are included – and she encourages mindfulness and creativity throughout. The guide to creating bespoke fragrances is clear and inspiring, adapting classical methods for the various forms of natural perfumes. Her extensive knowledge, experience, skill and passion shines on every page. For perfume enthusiasts, this book opens up a whole new world of possibilities, as a perfume lover or a budding creator. For those embarking on their journey, this is like having a mentor walk beside you every step of the way. For professionals there is much to delight and inspire, from examples of exquisite scent descriptions to instructions for making your own extracts and tinctures from foraged raw materials. The emphasis on ecology, sustainability, and ethically produced natural perfumes is welcome. A tour de force, Fragrant Signatures is much more than a guide or a manual – it is destined to become a classic and essential text on natural and botanical perfumery.
+          </blockquote>
+        </div>
+
+        <!-- Review 2 - Hana Tisserand -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Hana Tisserand</h3>
+            <p class="text-botanical-600 font-medium">Essential Oil Educator</p>
+          </div>
+          <blockquote class="text-lg text-ink-800 italic leading-relaxed text-center">
+            Do you want to get down to work and start creating your own perfumes? Then this book is here for you. Slobodanka Postic has banked on her years of experience teaching people the art and craft of making perfumes, and brings to you a brilliant guide. This manual is here to help you organize your fragrant materials, get your lab in order, and take useful notes while you experiment on finding just the right, well, note. While being functional, the book is also filled with great in-depth information about the different scent groups, base materials. I appreciate the practical focus of the book, as well as the detailed information. It fits right in with the Tisserand Institute approach – empowering the student to go on their own adventure equipped with the best available tools. A great way to dive into perfume creation.
+          </blockquote>
+        </div>
+
+        <!-- Review 3 - Marco Valussi -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+          <div class="flex justify-center mb-6">
+            {[...Array(5)].map(() => (
+              <svg class="w-6 h-6 text-amber-400 fill-current" viewBox="0 0 20 20">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+              </svg>
+            ))}
+          </div>
+          <div class="text-center mb-8">
+            <h3 class="text-2xl font-bold text-botanical-800 mb-2">Marco Valussi</h3>
+            <p class="text-botanical-600 font-medium">BSc. (Hons.) Phytotherapy, Consultant to the distillation industry</p>
+          </div>
+          <div class="text-lg text-ink-800 leading-relaxed space-y-6">
+            <p class="italic">
+              When I was invited to write a review for Fragrant Signatures – Manual for Creating Natural Perfumes I was worried I might not be the best reviewer. Of course, I have experience with fragrant materials, but my specific expertise is in other fields of application.
+            </p>
+            
+            <p class="italic">
+              However, although not a perfumer myself, the issue of the reactions to perfumes is of particular interest because it relates to the use of EOs as mood-modifying olfactory stimuli. And in fact, in my teachings, I've often used the example of perfumers, and their interactions with clients, to exemplify the complex nature of olfactory experience, and the need for an individual approach. Since I've learned a lot in my career from texts and people in the perfumery business, I decided I could try. And I wasn't disappointed. The manual is a manual indeed, clearly stating its purpose, which is to help perfumers-to-be to organize their way into this world, and it delivers it from the very beginning. In fact, the Introduction helps you very pragmatically to use the manual, explaining the content and usefulness of each chapter, and guiding the reader to the right content.
+            </p>
+            
+            <p class="italic">
+              I was impressed by the amount of practical knowledge that was offered in a very professional, and easy-to-understand, way. In general, I liked the use of boxed insights that kept the main text easy-flowing while providing, for those who are interested, more details.
+            </p>
+            
+            <p class="italic">
+              It was really interesting and fascinating to learn the very minute details concerning the day-to-day working of a perfumer. The manual is full of very useful and practical advice from the very beginning, like how to source/buy fragrant material, on how to build your palette, how to take advantage of courses, sample offers, aromatherapy friends and colleagues and so on to experience more material without excessive economic investment.
+            </p>
+            
+            <p class="italic">
+              Being a manual, with its typical structure and tone, full of practical and technical advice, it still succeeds in remaining readable and enjoyable. The theoretical knowledge and practical competence of the author are evident, as it is the love and joy of talking about fragrances. Being a technical person I was really drawn to it and I wanted to start filling in the questionaries and experience my essential oils from this perspective. And working in extraction and distillation, I really appreciated the recipes and extraction suggestions.
+            </p>
+            
+            <p class="italic">
+              I also liked the fact that synthetic perfumes were not demonized, but the differences and the pros and cons of both approaches were stated. I liked the way the history chapter was able to convey the fascinating history of smelly substances and the way they were used by men, without being bogged down by too many details.
+            </p>
+            
+            <p class="italic">
+              And last, but definitely not least, I really appreciated the stress Slobodanka puts on environmental and social responsibility when procuring materials, and on the need to be informed in terms of protected species. I also appreciated the fact that she was very clear about the issue of animal-derived substances, and explained the role and meaning of CITES. The attention to ecology, sustainability and ethics is evident throughout the text, and there's an entire chapter on Ecology and Sustainability. The ethical element is, in my opinion, part ad parcel of being a natural perfumer or an aromatherapist.
+            </p>
+            
+            <p class="italic">
+              Finally, the author cites a book I love, Burfield's "Natural Aromatic Materials", and in fact, I think this manual is a good practical companion of Tony's text. I sincerely suggest this manual for all those interested in entering the field of Natural perfumery, and I hope to see an Italian translation soon.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-16 flex justify-center space-x-4">
+        <a 
+          href="/en/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← Home
+        </a>
+        <a 
+          href="/en/about-manual" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          About Manual →
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,461 @@
+---
+import Layout from '../../layouts/LayoutEN.astro';
+---
+
+<Layout 
+  title="About This Manual - Fragrant Signatures" 
+  description="Table of contents and structure of the manual for creating natural perfumes"
+  currentPath="/en/about-manual"
+>
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-6xl">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent mb-6">
+          About This Manual
+        </h1>
+        <p class="text-xl text-botanical-700 max-w-3xl mx-auto leading-relaxed mb-8">
+          Complete content and structure of the manual for creating natural perfumes
+        </p>
+        
+        <!-- Book Cover Images -->
+        <div class="flex flex-col md:flex-row justify-center items-center gap-12 mb-12">
+          <div class="group cursor-pointer" data-image="/images/fs-featured-img.png">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105">
+              <img 
+                src="/images/fs-featured-img.png" 
+                alt="Fragrant Signatures - Croatian Edition"
+                class="w-80 h-auto md:w-96 lg:w-[28rem]"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="bg-white/90 rounded-full p-3">
+                  <svg class="w-8 h-8 text-botanical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="group cursor-pointer" data-image="/images/NNF_9028-scaled-e1657577863297.jpg">
+            <div class="relative overflow-hidden rounded-2xl shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105">
+              <img 
+                src="/images/NNF_9028-scaled-e1657577863297.jpg" 
+                alt="Fragrant Signatures - English Edition"
+                class="w-80 h-auto md:w-96 lg:w-[28rem]"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div class="bg-white/90 rounded-full p-3">
+                  <svg class="w-8 h-8 text-botanical-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table of Contents -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+        <h2 class="text-3xl font-bold text-botanical-800 mb-8 text-center">Table of Contents</h2>
+        
+        <!-- Main Chapters Overview -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <!-- Chapter 1-5 -->
+          <div class="bg-gradient-to-br from-botanical-50 to-nature-50 rounded-2xl p-6 border border-botanical-100">
+            <h3 class="text-lg font-bold text-botanical-800 mb-4">Basics (1-5)</h3>
+            <ul class="space-y-2 text-sm text-ink-700">
+              <li>• History of natural fragrant materials</li>
+              <li>• Smell experience</li>
+              <li>• Natural vs synthetic perfumes</li>
+              <li>• Materials in perfumery</li>
+              <li>• Studying fragrant materials</li>
+            </ul>
+          </div>
+          
+          <!-- Chapter 6-10 -->
+          <div class="bg-gradient-to-br from-nature-50 to-accent-50 rounded-2xl p-6 border border-botanical-100">
+            <h3 class="text-lg font-bold text-botanical-800 mb-4">Techniques (6-10)</h3>
+            <ul class="space-y-2 text-sm text-ink-700">
+              <li>• Classification of fragrant materials</li>
+              <li>• Creating accords</li>
+              <li>• Perfume creation process</li>
+              <li>• Other forms of perfumes</li>
+              <li>• Safety and restrictions</li>
+            </ul>
+          </div>
+          
+          <!-- Chapter 11-15 -->
+          <div class="bg-gradient-to-br from-accent-50 to-botanical-50 rounded-2xl p-6 border border-botanical-100">
+            <h3 class="text-lg font-bold text-botanical-800 mb-4">Additional (11-15)</h3>
+            <ul class="space-y-2 text-sm text-ink-700">
+              <li>• Ecology and sustainability</li>
+              <li>• Creator's everyday life</li>
+              <li>• Glossary</li>
+              <li>• Literature</li>
+              <li>• Appendices and forms</li>
+            </ul>
+          </div>
+        </div>
+        
+        <!-- Detailed Table of Contents (Collapsible) -->
+        <div class="border-t border-botanical-200 pt-8">
+          <button 
+            id="toggleDetails" 
+            class="w-full text-left flex items-center justify-between p-4 bg-gradient-to-r from-botanical-50 to-nature-50 rounded-xl border border-botanical-100 hover:from-botanical-100 hover:to-nature-100 transition-all duration-300"
+          >
+            <span class="text-lg font-semibold text-botanical-800">Detailed Contents (15 chapters)</span>
+            <svg id="toggleIcon" class="w-6 h-6 text-botanical-600 transform transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          <div id="detailedContent" class="hidden mt-4 bg-white/50 rounded-xl p-6 border border-botanical-100">
+            <div class="space-y-4 text-sm leading-relaxed">
+              <div class="font-semibold text-botanical-700 text-lg mb-4">
+                <a href="/en/introduction/" class="text-botanical-600 hover:text-botanical-800 underline">Introduction</a>
+              </div>
+              
+              <div class="ml-4 space-y-2">
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">1. Short History of Using Natural Fragrant Materials</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">2. The Smell Experience</div>
+                <div class="ml-6 text-ink-700">2.1. Body Odour and Perfume Choice</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">3. What is Natural Perfume and Why One Should Learn How to Create It?</div>
+                <div class="ml-6 text-ink-700">3.1. Comparison of Natural and Synthetic Perfumes</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">4. Materials Used in Natural Perfumery</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>4.1. Fragrant Materials of Plant Origin</div>
+                  <div>4.2. Fragrant Materials of Animal Origin</div>
+                  <div>4.3. Bases</div>
+                  <div>4.4. Perfumer's Palette</div>
+                  <div class="ml-4">4.4.1. Materials for the Starting Palette</div>
+                  <div>4.5. Procuring Fragrant Materials</div>
+                  <div class="ml-4">4.5.1. Adding Tinctures to Your Palette</div>
+                  <div class="ml-8">4.5.1.1. Few Useful Tinctures</div>
+                  <div>4.6. Quality Assessment</div>
+                  <div>4.7. Storing Natural Fragrant Materials</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">5. Studying Fragrant Materials</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>5.1. Space and Accessories</div>
+                  <div class="ml-4">5.1.1. Inventory of Fragrant Materials</div>
+                  <div>5.2. How to Organize Work</div>
+                  <div>5.3. Preparing Fragrant Materials</div>
+                  <div>5.4. Describing Scents</div>
+                  <div>5.5. Evaluating Materials in the Palette</div>
+                  <div class="ml-4">5.5.1. Scent Evaluation Forms</div>
+                  <div>5.6. Summing up the Knowledge about Materials in the Palette</div>
+                  <div class="ml-4">5.6.1. Palette Materials Sorted by Notes, Scent Groups and Scent Intensity</div>
+                  <div>5.7. Learning by the Jean Carles Method</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">6. Classification of Fragrant Materials</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>6.1. Classification by Notes</div>
+                  <div class="ml-4 space-y-1">
+                    <div>6.1.1. Bridge Notes</div>
+                    <div>6.1.2. Expanding Notes</div>
+                    <div>6.1.3. Accessory Notes</div>
+                  </div>
+                  <div>6.2. Classification by Scent Groups</div>
+                  <div class="ml-4 space-y-1">
+                    <div>6.2.1. Classification by Scent Groups by Jean Carles Method</div>
+                    <div>6.2.2. Scent Groups</div>
+                    <div class="ml-4 space-y-1">
+                      <div>6.2.2.1. Agrestic Group</div>
+                      <div>6.2.2.2. Animalic Group</div>
+                      <div>6.2.2.3. Balsamic Group</div>
+                      <div>6.2.2.4. Citrus Group</div>
+                      <div>6.2.2.5. Coniferous Group</div>
+                      <div>6.2.2.6. Earthy Group</div>
+                      <div>6.2.2.7. Floral Group</div>
+                      <div>6.2.2.8. Fruity Group</div>
+                      <div>6.2.2.9. Gourmand Group</div>
+                      <div>6.2.2.10. Green Group</div>
+                      <div>6.2.2.11. Herbal Group</div>
+                      <div>6.2.2.12. Marine Group</div>
+                      <div>6.2.2.13. Powdery Group</div>
+                      <div>6.2.2.14. Spicy Group</div>
+                      <div>6.2.2.15. Woody Group</div>
+                      <div>6.2.2.16. Other</div>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">7. Composing Accords</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>7.1. Accords</div>
+                  <div class="ml-4 space-y-1">
+                    <div>7.1.1. Horizontal Accord</div>
+                    <div>7.1.2. Vertical Accord</div>
+                    <div>7.1.3. Collection of Successful Accords</div>
+                  </div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">8. The Process of Creating Alcohol-based Perfume</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>8.1. Perfume Plan</div>
+                  <div>8.2. Perfume Creating</div>
+                  <div class="ml-4 space-y-1">
+                    <div>8.2.1. Solid Structure Method</div>
+                    <div class="ml-4 space-y-1">
+                      <div>8.2.1.1. Base Accord</div>
+                      <div>8.2.1.2. Middle Accord</div>
+                      <div>8.2.1.3. Top Accord</div>
+                      <div>8.2.1.4. Balancing Accords</div>
+                      <div>8.2.1.5. Perfume Formula</div>
+                      <div>8.2.1.6. Addressing Potential Problems</div>
+                      <div>8.2.1.7. Perfume Evaluation Form</div>
+                      <div>8.2.1.8. Post Festum Interventions</div>
+                      <div>8.2.1.9. Increasing Amounts</div>
+                    </div>
+                    <div>8.2.2. More Flexible Creation Methods</div>
+                    <div class="ml-4 space-y-1">
+                      <div>8.2.2.1. Composing From an Accord</div>
+                      <div>8.2.2.2. Leading Theme</div>
+                      <div>8.2.2.3. As Imagination Wishes</div>
+                    </div>
+                  </div>
+                  <div>8.3. Different Perfume Components: Bases</div>
+                  <div class="ml-4 space-y-1">
+                    <div>8.3.1. Building a Base</div>
+                    <div class="ml-4">8.3.1.1. Collection of Bases</div>
+                  </div>
+                  <div>8.4. Perfumes Classified by Concentration</div>
+                  <div>8.5. Perfume Families</div>
+                  <div class="ml-4 space-y-1">
+                    <div>8.5.1. Floral Family</div>
+                    <div>8.5.2. Amber Family</div>
+                    <div>8.5.3. Chypre Family</div>
+                    <div>8.5.4. Fougere Family</div>
+                    <div>8.5.5. Citrus Family</div>
+                  </div>
+                  <div>8.6. Taking Care of Your Natural Perfumes</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">9. Other Forms of Perfumes</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>9.1. Oil-based Perfumes</div>
+                  <div class="ml-4">9.1.1. Making an Infused Oils</div>
+                  <div>9.2. Solid Perfumes</div>
+                  <div class="ml-4">9.2.1. Making an Enfleurage Pomade</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">10. Safety</div>
+                <div class="ml-6 text-ink-700">10.1. Restrictions: IFRA Directives</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">11. Ecology and Sustainability</div>
+                <div class="ml-6 text-ink-700">11.1. Threatened Species</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">12. Everyday Life of Natural Perfume Creator</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">13. Glossary</div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">14. Literature</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>14.1. Books</div>
+                  <div>14.2. Articles, Online Resources and Personal Communication</div>
+                </div>
+                
+                <div class="font-medium text-ink-800 border-l-2 border-botanical-300 pl-3">15. Appendices</div>
+                <div class="ml-6 space-y-1 text-ink-700">
+                  <div>15.1. English-Latin List of Mentioned Materials</div>
+                  <div>15.2. Suppliers</div>
+                  <div>15.3. Spare Forms</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Download Section -->
+        <div class="mt-8 text-center">
+          <a 
+            href="/documents/Rezervni obrasci_MP_ENG.pdf" 
+            download
+            class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-botanical-600 to-botanical-700 text-white rounded-xl shadow-lg font-medium"
+          >
+            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Download Spare Forms
+          </a>
+        </div>
+      </div>
+      
+      <!-- Spacer -->
+      <div class="mt-16"></div>
+
+      <!-- Errata Section -->
+      <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-botanical-100">
+        <h2 class="text-3xl font-bold text-botanical-800 mb-8 text-center">Errata</h2>
+        
+        <div class="text-center mb-8">
+          <img 
+            src="/images/Errata_bijela.jpg" 
+            alt="Errata for Fragrant Signatures manual"
+            class="mx-auto max-w-2xl h-auto rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer"
+            onclick="openErrataModal()"
+          />
+        </div>
+        
+        <div class="text-center">
+        </div>
+      </div>
+      
+      <!-- Navigation -->
+      <div class="mt-16 flex justify-between items-center">
+        <a 
+          href="/en/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← Home
+        </a>
+        
+        <a 
+          href="/en/about-author/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          About Author →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Image Modal -->
+  <div id="imageModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-4xl max-h-full">
+      <button 
+        id="closeModalBtn"
+        class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img id="modalImage" src="" alt="" class="max-w-full max-h-full rounded-lg shadow-2xl" />
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Toggle detailed content
+      const toggleBtn = document.getElementById('toggleDetails');
+      const detailedContent = document.getElementById('detailedContent');
+      const toggleIcon = document.getElementById('toggleIcon');
+      
+      toggleBtn.addEventListener('click', function() {
+        detailedContent.classList.toggle('hidden');
+        toggleIcon.classList.toggle('rotate-180');
+      });
+      
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const closeBtn = document.getElementById('closeModalBtn');
+
+      // Add click listeners to image containers
+      const imageContainers = document.querySelectorAll('[data-image]');
+      imageContainers.forEach(container => {
+        container.addEventListener('click', function() {
+          const imageSrc = this.getAttribute('data-image');
+          openModal(imageSrc);
+        });
+      });
+
+      // Close modal with X button
+      closeBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeModal();
+      });
+
+      // Close modal when clicking outside the image
+      modal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeModal();
+        }
+      });
+
+      // Close modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    });
+
+    function openModal(imageSrc) {
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      modalImage.src = imageSrc;
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('imageModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+  </script>
+
+  <!-- Errata Modal -->
+  <div id="errataModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+    <div class="relative max-w-5xl max-h-full">
+      <button 
+        id="closeErrataModalBtn"
+        class="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors duration-200 z-10"
+      >
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+      <img src="/images/Errata_bijela.jpg" alt="Errata for Fragrant Signatures manual" class="max-w-full max-h-full rounded-lg shadow-2xl" />
+    </div>
+  </div>
+
+  <script>
+    function openErrataModal() {
+      const modal = document.getElementById('errataModal');
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeErrataModal() {
+      const modal = document.getElementById('errataModal');
+      modal.classList.add('hidden');
+      document.body.style.overflow = 'auto';
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const errataModal = document.getElementById('errataModal');
+      const closeErrataBtn = document.getElementById('closeErrataModalBtn');
+
+      // Close errata modal with X button
+      closeErrataBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeErrataModal();
+      });
+
+      // Close errata modal when clicking outside the image
+      errataModal.addEventListener('click', function(e) {
+        if (e.target === this) {
+          closeErrataModal();
+        }
+      });
+
+      // Close errata modal with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !errataModal.classList.contains('hidden')) {
+          closeErrataModal();
+        }
+      });
+    });
+  </script>
+</Layout>

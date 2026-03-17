@@ -1,0 +1,187 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout 
+  title="O autorici - Fragrant Signatures" 
+  description="Saznajte više o Slobodanki Poštić, autorici Fragrant Signatures i ambasadorici za Hrvatsku u Airmid Institute."
+  currentPath="/o-autorici"
+>
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-6xl">
+      <!-- Hero Section -->
+      <div class="text-center mb-16">
+        <h1 class="text-5xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent mb-6">
+          O autorici
+        </h1>
+      </div>
+
+      <!-- Author Content -->
+      <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+        <!-- Author Image -->
+        <div class="relative">
+          <div class="relative rounded-3xl shadow-2xl overflow-hidden">
+            <img 
+              src="/images/Slobodanka_Postic.jpg" 
+              alt="Slobodanka Poštić - autorica Fragrant Signatures"
+              class="w-full h-auto object-cover"
+            />
+          </div>
+          
+        </div>
+
+        <!-- Author Bio -->
+        <div class="space-y-6">
+          <h2 class="text-3xl font-bold text-botanical-800">Slobodanka Poštić</h2>
+          
+          <div class="bg-botanical-50 p-6 rounded-xl border border-botanical-200">
+            <h3 class="text-lg font-semibold text-botanical-800 mb-3">Edukacijska aktivnost</h3>
+            <p class="text-botanical-700 leading-relaxed">
+              Od 2005. godine osmišljava i vodi radionice, tečajeve, a zatim i Školu prirodne parfimeristike Mirisni potpisi, čiju englesku verziju održava u raznim europskim zemljama i online.
+            </p>
+            <p class="text-botanical-700 leading-relaxed mt-4">
+              Slobodanka uređuje stranicu o aromaterapiji, prirodnoj parfimeristici i olfaktornim iskustvima: <a href="https://www.aromaterapija.info" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-800 underline font-medium transition-colors duration-300">www.aromaterapija.info</a>
+            </p>
+          </div>
+          
+          <div class="bg-nature-50 p-6 rounded-xl border border-nature-200">
+            <h3 class="text-lg font-semibold text-nature-800 mb-3">Airmid Institute Ambassador</h3>
+            <p class="text-nature-700 leading-relaxed">
+              Od 2021. godine je uključena u rad <a href="https://airmidinstitute.org/airmid-global-ambassadors/" target="_blank" rel="noopener noreferrer" class="text-nature-600 hover:text-nature-800 underline font-medium transition-colors duration-300">Airmid Instituta</a> za zaštitu medicinskih i aromatičnih biljaka kao njihova ambasadorica za Hrvatsku.
+            </p>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="grid lg:grid-cols-3 gap-8 mb-16">
+        <!-- About the writing process -->
+        <div class="lg:col-span-2 bg-gradient-to-br from-white/90 to-botanical-50/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 pr-4 lg:pr-8 shadow-xl border border-botanical-200 hover:shadow-2xl transition-all duration-300">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl font-bold text-botanical-800 mb-3">O procesu pisanja priručnika</h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-botanical-400 to-nature-400 mx-auto rounded-full"></div>
+          </div>
+        
+          <!-- Kratki sažetak -->
+          <div class="prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+            <p class="text-xl font-semibold text-ink-800 bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500">
+              Uglavnom, čini se da sam nakon trogodišnje muke nekako dobauljala do kraja zadatka. Sad posao preuzimaju urednici, lektori, stručnjaci za prijelom teksta, ilustratori, korektori, recenzenti, tiskari… A ja mogu mirno predahnuti. Uz onaj lijepi osjećaj kamena u želucu i nervoze u iščekivanju krajnjeg rezultata.
+            </p>
+          </div>
+
+          <!-- Toggle button -->
+          <div class="text-center mt-6">
+            <button 
+              id="toggle-process" 
+              class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-botanical-600 to-botanical-700 text-white rounded-lg hover:from-botanical-700 hover:to-botanical-800 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium text-sm"
+            >
+              <span id="toggle-text">Pročitaj više o procesu pisanja</span>
+              <svg id="toggle-icon" class="w-4 h-4 ml-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Collapsible content -->
+          <div id="process-details" class="hidden mt-6 prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+            <p>
+              Pisanje udžbenika po kojem će netko usvojiti određenu vještinu je zadatak u kome konstantno balansirate na rubu nemoguće misije. A ako je ta vještina izuzetno kompleksna (kao što kreiranje prirodnih parfema jest), onda je to nemoguće rastuća prijetnja i konstantno vas tjera na odustajanje od ćoravog posla (kao što lijepo kaže narodna izreka). E, ali u ovoj priči treba uzeti u obzir još jednu poznatu izreku: onu o tvrdoj tikvi. A takvu autorica nosi na ramenima čitav život. Doda li se u taj koktel nepovoljnih okolnosti još i sklonost perfekcionizmu, situacija je definitivno obeshrabrujuća.
+            </p>
+            
+            <p>
+              Dakle, odlučila sam napisati detaljno, korak-po-korak, uputstvo za one koji žele usvojiti sam-svoj-majstor/ica način kreiranja prirodnog parfema. Pravo na tu naoko bahatu odluku mi daje 17-godišnje iskustvo učenja ljudi toj vještini i stotine polaznika koji su vrijedno i s voljom završili edukaciju Mirisni potpisi / Fragrant Signatures, razasutih baš po svim kontinentima. Među njima je više od tri četvrtine onih koji su ispunili upitnik koji je pratio edukaciju odgovorilo da im je vještina kreiranja osobnog prirodnog parfema podigla kvalitetu života.
+            </p>
+            
+            <p>
+              Hrpetine knjiga, članaka, on-line izvora i privatnih komunikacija koje sam savladala tijekom tog procesa (a trajao je gotovo tri godine) su neizbrojive. Količine bočica u mom olfaktoriju / mirisnoj paleti je ogromna. A kojekakvih na sve strane razasutih bilješki, zapisa, papirića i podsjetnika se ne želim ni sjetiti…
+            </p>
+            
+            <p>
+              Putem je trebalo pronaći odgovore i na pitanja koja na prvi pogled nemaju nikakve veze s temom. Na primjer: kada su pripitomljene deve? Hmmm… Počnete li čačkati po internetskim izvorima, naići ćete na nevjerojatan vremenski raspon (od nekoliko stotina do tisućicu godina) u koji razni autori smještaju taj vrlo važan povijesni događaj. Zašto važan? Zato što je od trenutka pripitomljavanja deva mogla krenuti trgovina između udaljenih krajeva, a to je u slučaju teme kojom se bavi ovaj priručnik silno važno: mirisne preparate se više nije moralo raditi samo od materijala dostupnih u neposrednoj životnoj okolini! Moglo se posegnuti i za čarobnim, tajanstvenim mirisima pristiglim iz dalekih, nepoznatih krajeva.
+            </p>
+            
+            <p>
+              Što se vremena pripitomljavanja deva tiče, zadovoljila sam se na kraju saznanjem da su, na primjer, u Tutankamonovo vrijeme pustinjske lađe (tj. spomenute deve) već vrijedno obavljale svoju civilizacijsku ulogu. Faraonov parfem je, naime, sadržavao nard. A njega je trebalo dopremiti s Himalaja. Dakle, bravo za deve i za Egipćane, uspješno su savladavali tu udaljenost.
+            </p>
+            
+            <p>
+              Iako profa po obrazovanju i obiteljskoj tradiciji, muke sam mučila pri odlučivanju kako najzornije i najdjelotvornije izložiti svaki i najmanji segment znanja. Razbiti zadatak na najsitnije koračiće? Ilustrirati proces pomno razrađenim obrascem? Kako razraditi vježbu koja će rezultirati stvaranjem potrebnih zaključaka i/ili razvijanjem određene vještine?
+            </p>
+            
+            <p>
+              Svijest o tome da nad glavom konstantno visi činjenica da različito čitamo i shvaćamo istu informaciju nije nimalo pomagala. Prisjetite se samo na koliko načina može poći ukrivo sklapanje najjednostavnijeg komada namještaja (recimo stolića ili police) za koje imate detaljnu uputu proizvođača, pa ćete razumjeti moje stalne dileme oko formuliranja uputa i za najkraći komadić nekog postupka. Glavobolno!
+            </p>
+            
+            <p>
+              A valjalo se i suzdržavati od pretjeranog dociranja. (Digresija kojoj ne mogu odoljeti: naučih onako usput da u engleskom jeziku postoji prekrasna i puno slikovitija riječ za dociranje – smartassing! Eto, ponekad i u lingvistici pronađem razlog da prigovorim svojoj osobnoj ptici rodi što me ispustila baš nad ovim terenom!) Ali, da se vratim na temu. Izbjegavanje dociranja je značilo nastojati dati precizne, jednoznačne upute na mjestima gdje sam smatrala da su neophodne i da olakšavaju usvajanje rutinskih postupaka ovog posla, a istovremeno (s namjerom da procesu učenja temeljenog na osobnom iskustvu ostavim što više prostora) pokušati držati otvorenima mogućnosti izbora i što manje sugerirati rješenja. E pa, jako se nadam da sam u tim namjerama donekle uspjela.
+            </p>
+            
+            <p>
+              Trebalo je, također, pažljivo držati kočnicu da se ne odluta u teme koje, koliko god zanimljive bile, ne služe osnovnoj svrsi priručnika – savladavanju vještine kreiranja prirodnog parfema. Materijal je zahtijevao i precizno razvrstavanje i povezivanje pojedinih segmenata, kako bi kroz njega s lakoćom mogli navigirati i uspješno ga koristiti i čitatelji bez ikakvog iskustva, ali i oni koji već raspolažu nekom količinom potrebnog znanja.
+            </p>
+          </div>
+        </div>
+        
+        <!-- Contact Card -->
+        <div class="bg-gradient-to-br from-accent-50 to-botanical-50 p-6 rounded-xl border border-accent-200 hover:shadow-lg transition-all duration-300 h-fit">
+          <div class="text-center">
+            <div class="w-12 h-12 bg-gradient-to-r from-botanical-600 to-accent-600 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold text-botanical-800 mb-3">Kontakt</h3>
+            <p class="text-botanical-700 text-sm leading-relaxed mb-4">
+              Kontaktirajte me za pitanja o edukaciji, priručniku ili suradnji
+            </p>
+            <a 
+              href="mailto:slo.postic@gmail.com"
+              class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-botanical-600 to-botanical-700 text-white rounded-lg hover:from-botanical-700 hover:to-botanical-800 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg font-medium text-sm"
+            >
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              slo.postic@gmail.com
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-8 flex justify-center">
+        <a 
+          href="/o-prirucniku/" 
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← O priručniku
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const toggleButton = document.getElementById('toggle-process');
+    const toggleText = document.getElementById('toggle-text');
+    const toggleIcon = document.getElementById('toggle-icon');
+    const processDetails = document.getElementById('process-details');
+    
+    if (toggleButton && processDetails) {
+      toggleButton.addEventListener('click', function() {
+        const isHidden = processDetails.classList.contains('hidden');
+        
+        if (isHidden) {
+          processDetails.classList.remove('hidden');
+          toggleText.textContent = 'Sakrij detalje';
+          toggleIcon.style.transform = 'rotate(180deg)';
+        } else {
+          processDetails.classList.add('hidden');
+          toggleText.textContent = 'Pročitaj više o procesu pisanja';
+          toggleIcon.style.transform = 'rotate(0deg)';
+        }
+      });
+    }
+  });
+</script>
