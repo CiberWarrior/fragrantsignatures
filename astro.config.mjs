@@ -5,7 +5,7 @@ import tailwind from '@astrojs/tailwind';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://beta.fragrant-signatures.eu',
+  site: 'https://fragrant-signatures.eu',
   base: '/',
   i18n: {
     defaultLocale: 'hr',

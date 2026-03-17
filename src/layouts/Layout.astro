@@ -8,6 +8,22 @@ export interface Props {
 }
 
 const { title = "Fragrant Signatures", description, currentPath } = Astro.props;
+
+// HR → EN path mapping for hreflang (SEO)
+const HR_TO_EN: Record<string, string> = {
+  '/': '/en/',
+  '/uvod/': '/en/introduction/',
+  '/o-prirucniku/': '/en/about-manual/',
+  '/o-autorici/': '/en/about-author/',
+  '/edukacija/': '/en/education/',
+  '/dogadjanja/': '/en/events/',
+  '/naruci/': '/en/order/',
+  '/recenzije/': '/en/reviews/',
+  '/pozadine/': '/en/wallpapers/',
+};
+const path = (currentPath || '/').replace(/\/?$/, '/');
+const alternateEn = HR_TO_EN[path] || '/en/';
+const desc = description || 'Priručnik za kreiranje prirodnih parfema - Fragrant Signatures';
 ---
 
 <!doctype html>
@@ -24,19 +40,20 @@ const { title = "Fragrant Signatures", description, currentPath } = Astro.props;
 		<meta name="author" content="Slobodanka Poštić" />
 		<meta name="keywords" content="prirodni parfemi, parfumeristika, mirisni potpisi, botanika, aromaterapija, edukacija, priručnik" />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<meta property="og:description" content={desc} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={`https://fragrant-signatures.eu${currentPath || '/'}`} />
+		<meta property="og:url" content={`https://fragrant-signatures.eu${path}`} />
 		<meta property="og:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
 		<meta property="og:site_name" content="Fragrant Signatures" />
 		<meta property="og:locale" content="hr_HR" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
+		<meta name="twitter:description" content={desc} />
 		<meta name="twitter:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
-		<link rel="canonical" href={`https://fragrant-signatures.eu${currentPath || '/'}`} />
-		<link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu/en${currentPath?.replace('/', '') || ''}`} />
-		<link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${currentPath || '/'}`} />
+		<link rel="canonical" href={`https://fragrant-signatures.eu${path}`} />
+		<link rel="alternate" hreflang="x-default" href={`https://fragrant-signatures.eu${path}`} />
+		<link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu${alternateEn}`} />
+		<link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${path}`} />
 		
 		<!-- Structured Data -->
 		<script type="application/ld+json">

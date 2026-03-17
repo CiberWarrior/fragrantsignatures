@@ -8,6 +8,22 @@ export interface Props {
 }
 
 const { title = "Fragrant Signatures", description, currentPath } = Astro.props;
+
+// EN → HR path mapping for hreflang (SEO)
+const EN_TO_HR: Record<string, string> = {
+  '/en/': '/',
+  '/en/introduction/': '/uvod/',
+  '/en/about-manual/': '/o-prirucniku/',
+  '/en/about-author/': '/o-autorici/',
+  '/en/education/': '/edukacija/',
+  '/en/events/': '/dogadjanja/',
+  '/en/order/': '/naruci/',
+  '/en/reviews/': '/recenzije/',
+  '/en/wallpapers/': '/pozadine/',
+};
+const path = (currentPath || '/en').replace(/\/?$/, '/');
+const alternateHr = EN_TO_HR[path] || '/';
+const desc = description || 'Manual for creating natural perfumes - Fragrant Signatures';
 ---
 
 <!doctype html>
@@ -18,25 +34,26 @@ const { title = "Fragrant Signatures", description, currentPath } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		{description && <meta name="description" content={description} />}
+		<meta name="description" content={desc} />
 		<meta name="theme-color" content="#059669" />
 		<meta name="robots" content="index, follow" />
 		<meta name="author" content="Slobodanka Poštić" />
 		<meta name="keywords" content="natural perfumes, perfumery, fragrant signatures, botany, aromatherapy, education, manual" />
 		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<meta property="og:description" content={desc} />
 		<meta property="og:type" content="website" />
-		<meta property="og:url" content={`https://fragrant-signatures.eu${currentPath || '/en'}`} />
+		<meta property="og:url" content={`https://fragrant-signatures.eu${path}`} />
 		<meta property="og:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
 		<meta property="og:site_name" content="Fragrant Signatures" />
 		<meta property="og:locale" content="en_US" />
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={description} />
+		<meta name="twitter:description" content={desc} />
 		<meta name="twitter:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
-		<link rel="canonical" href={`https://fragrant-signatures.eu${currentPath || '/en'}`} />
-		<link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu${currentPath || '/en'}`} />
-		<link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${currentPath?.replace('/en', '') || '/'}`} />
+		<link rel="canonical" href={`https://fragrant-signatures.eu${path}`} />
+		<link rel="alternate" hreflang="x-default" href={`https://fragrant-signatures.eu${alternateHr}`} />
+		<link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu${path}`} />
+		<link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${alternateHr}`} />
 		
 		<!-- Structured Data -->
 		<script type="application/ld+json">

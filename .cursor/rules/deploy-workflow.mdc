@@ -1,0 +1,31 @@
+---
+description: Deploy workflow — Cursor → GitHub → Vercel
+alwaysApply: true
+---
+
+# Fragrant Signatures — Deploy Workflow
+
+## Workflow (3 koraka)
+
+1. **Uredi kod u Cursoru** — sve promjene radiš ovdje
+2. **Git push na GitHub** — u Mac Terminalu:
+   ```bash
+   cd /Users/renata/Desktop/fragrantsignatures
+   git add .
+   git commit -m "opis promjena"
+   git push origin main
+   ```
+3. **Vercel automatski rebuilda i deploya** — nema ručnog uploada
+
+## Što NE treba
+
+- cPanel
+- ZIP arhive
+- Ručni upload datoteka
+- `npm run build` lokalno (Vercel radi build na serveru)
+
+## Domena
+
+- Produkcija: `https://fragrant-signatures.eu` i `https://www.fragrant-signatures.eu`
+- DNS se upravlja u cPanel Zone Editoru (jednom postavljeno)
+- SSL certifikat automatski od Vercela
