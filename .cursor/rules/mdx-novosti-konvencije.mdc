@@ -1,0 +1,50 @@
+---
+description: Konvencije za pisanje MDX članaka u src/content/novosti/
+globs: src/content/novosti/**/*.mdx
+alwaysApply: false
+---
+
+# MDX članci — Novosti
+
+## Frontmatter (obavezna polja)
+
+```yaml
+---
+title: 'Naslov članka'
+date: '22. veljače 2026.'       # Hrvatski format datuma
+thumbnail: '/images/ime-slike.jpg'
+heroAlt: 'Opis slike za accessibility'
+preview: 'Kratki opis koji se prikazuje u accordion triggeru (1-2 rečenice).'
+order: 1                         # 1 = najnoviji, manji broj = prikazuje se prvi
+---
+```
+
+## Istaknuti blokovi (callout)
+
+Uvijek koristi `<div>`, NIKAD `<p>` — MDX parser wrapa sadržaj `<p>` u dodatni `<p>` što stvara invalid HTML i prazne vizualne artefakte.
+
+```mdx
+✅ ISPRAVNO:
+<div class="bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500 not-prose">
+  Tekst istaknutog bloka.
+</div>
+
+❌ POGREŠNO:
+<p class="bg-gradient-to-r ...">
+  Tekst — ovo generira prazan artefakt iznad bloka!
+</p>
+```
+
+## Linkovi unutar teksta
+
+```mdx
+<a href="https://primjer.com" target="_blank" rel="noopener noreferrer" class="text-accent-600 underline hover:text-accent-800 transition-colors">Naziv linka</a>
+```
+
+## Naslovi
+
+Koristi `##` za naslove unutar članka (renderira se kao `<h2>` unutar prose diva).
+
+## Novi članak
+
+Kopiraj postojeći `.mdx` fajl, promijeni frontmatter i sadržaj, povećaj `order` broj za 1 u odnosu na prethodni najstariji.
