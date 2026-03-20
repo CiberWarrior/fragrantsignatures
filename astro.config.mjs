@@ -2,8 +2,8 @@
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
 import tailwind from '@astrojs/tailwind';
+import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://fragrant-signatures.eu',
   base: '/',
@@ -11,17 +11,26 @@ export default defineConfig({
     defaultLocale: 'hr',
     locales: ['hr', 'en'],
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
   trailingSlash: 'always',
   integrations: [
-    mdx(), // omogućava .mdx fajlove
-    tailwind(), // omogućava Tailwind CSS
+    mdx(),
+    tailwind(),
+    sitemap({
+      i18n: {
+        defaultLocale: 'hr',
+        locales: {
+          hr: 'hr-HR',
+          en: 'en-US',
+        },
+      },
+    }),
   ],
   markdown: {
     shikiConfig: {
-      theme: 'github-dark', // opcionalno: tema za code blockove
+      theme: 'github-dark',
     },
   },
 });

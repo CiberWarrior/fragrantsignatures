@@ -1,6 +1,4 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-
 export interface Props {
   currentPath?: string;
 }
@@ -10,10 +8,8 @@ const { currentPath = '' } = Astro.props;
 const locale = Astro.currentLocale || 'hr';
 const prefix = locale === 'en' ? '/en' : '';
 
-// helper za active state (normalizira trailing slash)
 const normalize = (p: string) => (p.endsWith('/') ? p : p + '/');
 
-// Meniji: statički linkovi po jeziku (ne koristi getRelativeLocaleUrl ovdje)
 const navigation = locale === 'en'
   ? [
       { name: 'Home',      href: `${prefix}/` },
@@ -57,8 +53,9 @@ const pathMappings = {
 const currentPathNormalized = normalize(currentPath);
 const mappedPath = pathMappings[currentPathNormalized];
 
-const switchToHR = mappedPath ? (mappedPath.startsWith('/en/') ? mappedPath.replace('/en/', '/') : mappedPath) : '/';
-const switchToEN = mappedPath ? (mappedPath.startsWith('/en/') ? mappedPath : `/en${mappedPath}`) : '/en/';
+// mappedPath is always the opposite-language URL from the mapping table
+const switchToHR = locale === 'en' ? (mappedPath || '/') : currentPathNormalized;
+const switchToEN = locale === 'hr' ? (mappedPath || '/en/') : currentPathNormalized;
 ---
 
 <nav class="bg-white/90 backdrop-blur-md shadow-sm border-b border-botanical-200 z-50">

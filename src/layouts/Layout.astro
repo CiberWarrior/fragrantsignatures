@@ -5,11 +5,13 @@ export interface Props {
   title?: string;
   description?: string;
   currentPath?: string;
+  lang?: 'hr' | 'en';
 }
 
-const { title = "Fragrant Signatures", description, currentPath } = Astro.props;
+const { title = 'Fragrant Signatures', description, currentPath, lang = 'hr' } = Astro.props;
 
-// HR → EN path mapping for hreflang (SEO)
+const isEn = lang === 'en';
+
 const HR_TO_EN: Record<string, string> = {
   '/': '/en/',
   '/uvod/': '/en/introduction/',
@@ -21,129 +23,202 @@ const HR_TO_EN: Record<string, string> = {
   '/recenzije/': '/en/reviews/',
   '/pozadine/': '/en/wallpapers/',
 };
-const path = (currentPath || '/').replace(/\/?$/, '/');
-const alternateEn = HR_TO_EN[path] || '/en/';
-const desc = description || 'Priručnik za kreiranje prirodnih parfema - Fragrant Signatures';
+
+const EN_TO_HR: Record<string, string> = {
+  '/en/': '/',
+  '/en/introduction/': '/uvod/',
+  '/en/about-manual/': '/o-prirucniku/',
+  '/en/about-author/': '/o-autorici/',
+  '/en/education/': '/edukacija/',
+  '/en/events/': '/dogadjanja/',
+  '/en/order/': '/naruci/',
+  '/en/reviews/': '/recenzije/',
+  '/en/wallpapers/': '/pozadine/',
+};
+
+const defaultPath = isEn ? '/en/' : '/';
+const path = (currentPath || defaultPath).replace(/\/?$/, '/');
+const alternatePath = isEn ? (EN_TO_HR[path] || '/') : (HR_TO_EN[path] || '/en/');
+
+const hrPath = isEn ? alternatePath : path;
+const enPath = isEn ? path : alternatePath;
+
+const desc =
+  description ||
+  (isEn
+    ? 'Manual for creating natural perfumes - Fragrant Signatures'
+    : 'Priručnik za kreiranje prirodnih parfema - Fragrant Signatures');
+
+const ogLocale = isEn ? 'en_US' : 'hr_HR';
+const keywords = isEn
+  ? 'natural perfumes, perfumery, fragrant signatures, botany, aromatherapy, education, manual'
+  : 'prirodni parfemi, parfumeristika, mirisni potpisi, botanika, aromaterapija, edukacija, priručnik';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: isEn
+    ? 'Fragrant Signatures - Manual for Creating Natural Perfumes'
+    : 'Mirisni potpisi - Priručnik za kreiranje prirodnih parfema',
+  alternateName: isEn
+    ? 'Mirisni potpisi - Priručnik za kreiranje prirodnih parfema'
+    : 'Fragrant Signatures - Manual for Creating Natural Perfumes',
+  author: {
+    '@type': 'Person',
+    name: 'Slobodanka Poštić',
+    email: 'slo.postic@gmail.com',
+    jobTitle: isEn ? 'Perfumer and Educator' : 'Parfumeristkinja i edukatorica',
+    affiliation: {
+      '@type': 'Organization',
+      name: 'Airmid Institute',
+      url: 'https://airmidinstitute.org',
+    },
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Fragrant Signatures',
+    url: 'https://fragrant-signatures.eu',
+  },
+  datePublished: '2024',
+  description: isEn
+    ? 'Comprehensive manual for creating natural perfumes with detailed instructions, techniques and practical exercises.'
+    : 'Sveobuhvatan priručnik za kreiranje prirodnih parfema s detaljnim uputama, tehnikama i praktičnim vježbama.',
+  inLanguage: isEn ? 'en' : 'hr',
+  isbn: '978-953-484-123-4',
+  numberOfPages: '400+',
+  offers: {
+    '@type': 'Offer',
+    price: '55.00',
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+    url: isEn
+      ? 'https://fragrant-signatures.eu/en/order/'
+      : 'https://fragrant-signatures.eu/naruci/',
+  },
+  image: 'https://fragrant-signatures.eu/images/fs-featured-img.png',
+  url: isEn ? 'https://fragrant-signatures.eu/en/' : 'https://fragrant-signatures.eu',
+};
 ---
 
 <!doctype html>
-<html lang="hr">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		{description && <meta name="description" content={description} />}
-		<meta name="theme-color" content="#059669" />
-		<meta name="robots" content="index, follow" />
-		<meta name="author" content="Slobodanka Poštić" />
-		<meta name="keywords" content="prirodni parfemi, parfumeristika, mirisni potpisi, botanika, aromaterapija, edukacija, priručnik" />
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={desc} />
-		<meta property="og:type" content="website" />
-		<meta property="og:url" content={`https://fragrant-signatures.eu${path}`} />
-		<meta property="og:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
-		<meta property="og:site_name" content="Fragrant Signatures" />
-		<meta property="og:locale" content="hr_HR" />
-		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={title} />
-		<meta name="twitter:description" content={desc} />
-		<meta name="twitter:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
-		<link rel="canonical" href={`https://fragrant-signatures.eu${path}`} />
-		<link rel="alternate" hreflang="x-default" href={`https://fragrant-signatures.eu${path}`} />
-		<link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu${alternateEn}`} />
-		<link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${path}`} />
-		
-		<!-- Structured Data -->
-		<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "Book",
-			"name": "Mirisni potpisi - Priručnik za kreiranje prirodnih parfema",
-			"alternateName": "Fragrant Signatures - Manual for Creating Natural Perfumes",
-			"author": {
-				"@type": "Person",
-				"name": "Slobodanka Poštić",
-				"email": "slo.postic@gmail.com",
-				"jobTitle": "Parfumeristkinja i edukatorica",
-				"affiliation": {
-					"@type": "Organization",
-					"name": "Airmid Institute",
-					"url": "https://airmidinstitute.org"
-				}
-			},
-			"publisher": {
-				"@type": "Organization",
-				"name": "Fragrant Signatures",
-				"url": "https://fragrant-signatures.eu"
-			},
-			"datePublished": "2024",
-			"description": "Sveobuhvatan priručnik za kreiranje prirodnih parfema s detaljnim uputama, tehnikama i praktičnim vježbama.",
-			"inLanguage": "hr",
-			"isbn": "978-953-484-123-4",
-			"numberOfPages": "400+",
-			"offers": {
-				"@type": "Offer",
-				"price": "55.00",
-				"priceCurrency": "EUR",
-				"availability": "https://schema.org/InStock",
-				"url": "https://fragrant-signatures.eu/naruci"
-			},
-			"image": "https://fragrant-signatures.eu/images/fs-featured-img.png",
-			"url": "https://fragrant-signatures.eu"
-		}
-		</script>
-		
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-	</head>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpeg" href="/images/fs-icon.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/images/fs-icon.jpg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={desc} />
+    <meta name="theme-color" content="#059669" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Slobodanka Poštić" />
+    <meta name="keywords" content={keywords} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={`https://fragrant-signatures.eu${path}`} />
+    <meta property="og:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
+    <meta property="og:site_name" content="Fragrant Signatures" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content="https://fragrant-signatures.eu/images/fs-featured-img.png" />
+    <link rel="canonical" href={`https://fragrant-signatures.eu${path}`} />
+    <link rel="alternate" hreflang="x-default" href={`https://fragrant-signatures.eu${hrPath}`} />
+    <link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${hrPath}`} />
+    <link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu${enPath}`} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
   <body class="bg-gradient-to-br from-botanical-50 via-white to-nature-50 text-botanical-900 min-h-screen">
-		<Navigation currentPath={currentPath} />
-		<main>
-			<slot />
-		</main>
-		
-		<!-- Footer -->
-		<footer class="bg-gradient-to-r from-botanical-100 to-nature-100 border-t border-botanical-200">
-			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-				<div class="grid md:grid-cols-2 gap-8 items-center">
-					<!-- Logo/Brand -->
-					<div class="text-center md:text-left">
-						<h3 class="text-xl font-bold text-botanical-800 mb-2">Fragrant Signatures</h3>
-						<p class="text-sm text-botanical-600">Priručnik za kreiranje prirodnih parfema</p>
-					</div>
-					
-					<!-- Social Media -->
-					<div class="text-center">
-						<p class="text-sm text-botanical-600 mb-3">Pratite nas</p>
-						<div class="flex justify-center space-x-4">
-							<a href="https://www.facebook.com/groups/289513248317640" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-800 transition-colors duration-300">
-								<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-									<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-								</svg>
-							</a>
-							<a href="https://www.instagram.com/fragrant.signatures" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-800 transition-colors duration-300">
-								<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-									<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-								</svg>
-							</a>
-						</div>
-					</div>
-					
-				</div>
-				
-				<!-- Bottom text -->
-				<div class="mt-8 pt-6 border-t border-botanical-200">
-					<p class="text-xs text-botanical-500 text-center leading-relaxed">
-						The world of natural perfumery is right under your nose. <a href="https://fierce-women.net/" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300">FIERCE WOMEN</a>, a social enterprise, is delighted to share with you <em>'Fragrant Signatures: Manual for Creating Natural Perfumes'</em> by <a href="https://airmidinstitute.org/" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300">Airmid Institute</a> ambassador for Croatia, <a href="https://airmidinstitute.org/airmid-global-ambassadors/" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300">Slobodanka Poštić</a>.
-					</p>
-					<p class="text-xs text-botanical-400 text-center mt-4">
-						©2026 Fragrant Signatures. All rights reserved.
-					</p>
-				</div>
-			</div>
-		</footer>
-	</body>
+    <Navigation currentPath={currentPath} />
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-gradient-to-r from-botanical-100 to-nature-100 border-t border-botanical-200">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+          <div class="text-center md:text-left">
+            <h3 class="text-xl font-bold text-botanical-800 mb-2">Fragrant Signatures</h3>
+            <p class="text-sm text-botanical-600">
+              {isEn ? 'Manual for creating natural perfumes' : 'Priručnik za kreiranje prirodnih parfema'}
+            </p>
+          </div>
+
+          <div class="text-center">
+            <p class="text-sm text-botanical-600 mb-3">{isEn ? 'Follow us' : 'Pratite nas'}</p>
+            <div class="flex justify-center space-x-4">
+              <a
+                href="https://www.facebook.com/groups/289513248317640"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-800 transition-colors duration-300"
+                aria-label="Facebook"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="https://www.instagram.com/fragrant.signatures"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-800 transition-colors duration-300"
+                aria-label="Instagram"
+              >
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 pt-6 border-t border-botanical-200">
+          <p class="text-xs text-botanical-500 text-center leading-relaxed">
+            The world of natural perfumery is right under your nose.{' '}
+            <a
+              href="https://fierce-women.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+              >FIERCE WOMEN</a
+            >, a social enterprise, is delighted to share with you <em
+              >'Fragrant Signatures: Manual for Creating Natural Perfumes'</em
+            > by{' '}
+            <a
+              href="https://airmidinstitute.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+              >Airmid Institute</a
+            > ambassador for Croatia,{' '}
+            <a
+              href="https://airmidinstitute.org/airmid-global-ambassadors/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+              >Slobodanka Poštić</a
+            >.
+          </p>
+          <p class="text-xs text-botanical-400 text-center mt-4">
+            ©2026 Fragrant Signatures. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
