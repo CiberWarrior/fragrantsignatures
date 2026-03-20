@@ -4,7 +4,7 @@ import Layout from '../../layouts/LayoutEN.astro';
 
 <Layout 
   title="Order Fragrant Signatures Manual | ETSY Store or Contact Form" 
-  description="Order the natural perfumery manual through our ETSY store or contact form. Price €62.73 with delivery within Croatia. Available immediately."
+  description="Order the natural perfumery manual through our ETSY store or contact form. Price 55,00 EUR with delivery within Croatia. Available immediately."
   currentPath="/en/order"
 >
   <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
@@ -29,34 +29,78 @@ import Layout from '../../layouts/LayoutEN.astro';
         <h1 class="text-5xl font-bold text-botanical-800 mb-8">
           Order
         </h1>
-        <p class="text-xl text-botanical-700 max-w-3xl mx-auto leading-relaxed">
-          You can order Fragrant Signatures from our <a href="https://www.etsy.com/shop/FierceWomenArt?ref=simple-shop-header-name&listing_id=1244543801" target="_blank" rel="noopener noreferrer" class="text-botanical-600 hover:text-botanical-800 underline font-medium transition-colors duration-300">ETSY store</a>, or contact us through this form:
-        </p>
       </div>
 
-      <!-- Google Form -->
-      <div class="w-full max-w-4xl mx-auto">
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdGlY6I_5bFYAkx-bc1gOgYLaXSpiaO0yxIaA5bjBruHY2_KQ/viewform?embedded=true" 
-          width="100%" 
-          height="2027" 
-          frameborder="0" 
-          marginheight="0" 
-          marginwidth="0"
-          class="rounded-lg"
+      <!-- Success message after form submission -->
+      {Astro.url.searchParams.get('poslano') !== null && (
+        <div class="max-w-xl mx-auto mb-6 p-4 bg-botanical-100 border border-botanical-300 rounded-lg text-botanical-800 text-center">
+          Thank you! Your message has been sent. We will get back to you soon.
+        </div>
+      )}
+
+      <!-- Contact form (FormSubmit.co → slo.postic@gmail.com, client activates 1x) -->
+      <div class="w-full max-w-xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-botanical-200">
+        <h2 class="text-2xl font-bold text-botanical-800 mb-6">Contact us</h2>
+
+        <form
+          action="https://formsubmit.co/slo.postic@gmail.com"
+          method="POST"
+          class="space-y-6"
         >
-          Loading…
-        </iframe>
-      </div>
-      
-      <!-- Navigation -->
-      <div class="mt-16 flex justify-center">
-        <a 
-          href="/en/" 
-          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
-        >
-          ← Home
-        </a>
+          <input type="hidden" name="_next" value="https://fragrant-signatures.eu/en/order/?poslano=1" />
+          <input type="hidden" name="_subject" value="New message - Order page" />
+          <input type="text" name="_honey" style="display: none" tabindex="-1" autocomplete="off" />
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div>
+              <label for="ime" class="block text-sm font-medium text-botanical-700 mb-2">
+                First Name *
+              </label>
+              <input
+                type="text"
+                id="ime"
+                name="ime"
+                required
+                class="w-full px-4 py-3 border border-botanical-300 rounded-lg focus:ring-2 focus:ring-botanical-500 focus:border-botanical-500 transition-all duration-300 bg-white"
+                placeholder="Your first name"
+              />
+            </div>
+            <div>
+              <label for="prezime" class="block text-sm font-medium text-botanical-700 mb-2">
+                Last Name *
+              </label>
+              <input
+                type="text"
+                id="prezime"
+                name="prezime"
+                required
+                class="w-full px-4 py-3 border border-botanical-300 rounded-lg focus:ring-2 focus:ring-botanical-500 focus:border-botanical-500 transition-all duration-300 bg-white"
+                placeholder="Your last name"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="poruka" class="block text-sm font-medium text-botanical-700 mb-2">
+              Message *
+            </label>
+            <textarea
+              id="poruka"
+              name="poruka"
+              rows="6"
+              required
+              class="w-full px-4 py-3 border border-botanical-300 rounded-lg focus:ring-2 focus:ring-botanical-500 focus:border-botanical-500 transition-all duration-300 bg-white resize-none"
+              placeholder="Your message..."
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-nature-600 to-nature-700 text-white py-4 px-6 rounded-lg font-semibold hover:from-nature-700 hover:to-nature-600 transition-all duration-300 transform hover:scale-[1.02] shadow-lg hover:shadow-xl"
+          >
+            Send message
+          </button>
+        </form>
       </div>
     </div>
   </div>

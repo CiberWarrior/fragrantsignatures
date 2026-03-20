@@ -1,0 +1,426 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Novosti - Fragrant Signatures"
+  description="Odabrani tekstovi autorice priručnika Mirisni potpisi – Slobodanke Poštić. Članci o prirodnoj parfimeristici"
+  currentPath="/novosti"
+>
+  <style>
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-3xl">
+
+      <!-- Hero - lightweight -->
+      <div class="text-center mb-14">
+        <h1 class="text-5xl font-bold text-botanical-800 mb-4">Novosti</h1>
+        <p class="text-lg text-botanical-500">
+          Tekstovi Slobodanke Poštić 
+        </p>
+        <div class="flex items-center justify-center mt-8">
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-botanical-300 to-transparent"></div>
+          <div class="mx-4 w-2 h-2 bg-botanical-500 rounded-full"></div>
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-botanical-300 to-transparent"></div>
+        </div>
+      </div>
+
+      <!-- Accordion -->
+      <div class="space-y-3" id="novosti-accordion">
+
+        <!-- Članak: Izložba Nota -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-botanical-100 overflow-hidden">
+          <button
+            class="accordion-trigger w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-botanical-50 transition-colors duration-200"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/nota.jpg"
+              alt=""
+              aria-hidden="true"
+              class="flex-shrink-0 w-16 h-16 rounded-xl object-cover"
+            />
+            <div class="flex-1 min-w-0">
+              <span class="block text-xs font-medium text-botanical-400 uppercase tracking-wider mb-1">
+                22. veljače 2026.
+              </span>
+              <span class="block text-lg font-bold text-botanical-800 leading-snug">
+                Izložba: Nota – priča o mirisu
+              </span>
+              <span class="block text-sm text-botanical-500 mt-1 line-clamp-1">
+                Ako je miris tema koja vas zanima, put pod noge: pravac Beograd, Muzej nauke i tehnike!
+              </span>
+            </div>
+            <svg
+              class="accordion-icon flex-shrink-0 w-5 h-5 text-botanical-400 transition-transform duration-300 ml-2"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div class="accordion-content">
+            <div class="px-6 pb-8 pt-2">
+              <img
+                src="/images/nota.jpg"
+                alt="Izložba Nota – priča o mirisu, Muzej nauke i tehnike, Beograd"
+                class="w-full rounded-2xl mb-8 object-cover max-h-[500px]"
+              />
+              <div class="prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+                <p>
+                  Ako je miris tema koja vas zanima, put pod noge: pravac Beograd, Muzej nauke i tehnike!
+                  Tamo se od 25. studenog 2025. do 30. travnja 2026. održava izložba "Nota – priča o mirisu".
+                  Ponuda takvog užitka je vrlo rijetka i nećete je naći nigdje bliže, pa povedite svoj nos na užvanciju!
+                </p>
+                <p>
+                  Susjedi, svaka čast! Realizaciju beogradske izložbe su podržali Ministarstvo kulture Republike
+                  Srbije, Francuski institut u Beogradu i Međunarodni muzej parfema u Grasu, a prateći program
+                  izložbe nudi radionice, predavanja i stručna vođenja. Izložba je popraćena i dobrom knjigom
+                  (tekst je na srpskom i engleskom), pa i to svjedoči o temeljitosti cijelog poduhvata.
+                </p>
+                <p class="bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500">
+                  Osjet mirisa, kome u ovom našem dijelu svijeta ne posvećujemo naročitu pažnju, igra važnu ulogu
+                  u našem preživljavanju, te snažno utječe na emocije i pamćenje. Znači na kvalitet života! Zbog
+                  toga bi u inteligentnije ponašanje spadalo to imati na umu.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Članak: Doživljaj mirisa -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-botanical-100 overflow-hidden">
+          <button
+            class="accordion-trigger w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-botanical-50 transition-colors duration-200"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/istanbul.jpg"
+              alt=""
+              aria-hidden="true"
+              class="flex-shrink-0 w-16 h-16 rounded-xl object-cover"
+            />
+            <div class="flex-1 min-w-0">
+              <span class="block text-xs font-medium text-botanical-400 uppercase tracking-wider mb-1">
+                15. veljače 2026.
+              </span>
+              <span class="block text-lg font-bold text-botanical-800 leading-snug">
+                Doživljaj mirisa
+              </span>
+              <span class="block text-sm text-botanical-500 mt-1 line-clamp-1">
+                Kao osobu koja već treće desetljeće uči ljude kako kreirati prirodne parfeme me rastužuje
+                činjenica da tako malo pažnje posvećujemo iskustvima svojih nosova.
+              </span>
+            </div>
+            <svg
+              class="accordion-icon flex-shrink-0 w-5 h-5 text-botanical-400 transition-transform duration-300 ml-2"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div class="accordion-content">
+            <div class="px-6 pb-8 pt-2">
+              <img
+                src="/images/istanbul.jpg"
+                alt="Edukacija o kreiranju prirodnih parfema u Istanbulu – Farmaceutski fakultet"
+                class="w-full rounded-2xl mb-8 object-cover max-h-[500px]"
+              />
+              <div class="prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+                <p>
+                  Kao osobu koja već treće desetljeće uči ljude kako kreirati prirodne parfeme me rastužuje
+                  činjenica da u ovim našim prostorima tako malo pažnje posvećujemo iskustvima svojih nosova.
+                </p>
+                <p>
+                  Uzme li se u obzir saznanje da ugodni mirisi znatno utječu na zadovoljstvo, a ono igra
+                  značajnu ulogu u održavanju dobrog raspoloženja, a time i organizma u ravnoteži, takvo je
+                  ponašanje, najblaže rečeno, neinteligentno. A ne mora biti tako, nije čak potreban ni prevelik
+                  napor da se promijeni takva navika. Treba samo odlučiti i svoj nos staviti na permanentno
+                  dežurstvo. I birati mirise kojima se okružujemo.
+                </p>
+                <p>
+                  U mnogim sredinama u svijetu je odnos prema mirisnoj dimenziji života zavidno drugačiji. Što
+                  vrijeme više odmiče od mog posjeta Istanbulu u jesen 2024.g. sve češće, s blagom mješavinom
+                  sentimenta i zavisti, razmišljam o svom tamošnjem iskustvu. U Turskoj se, naime, prema mirisnim
+                  doživljajima odnose znatno drugačije nego što je to uobičajeno kod nas. Napr. obilno koriste
+                  svoju kolonju u raznim situacijama. I svakodnevnim i onim izvanrednim. Nije ništa neobično da
+                  vas, kad dolazite k nekome u posjet, domaćini već na vratima dočekaju s bocom kolonje za
+                  čišćenje ruku. Ili da vas, putujete li nekud autobusom, vozač pri ulasku "zaskoči" ponudom iste
+                  procedure. Na tržištu je mnogo aromaterapijskih proizvoda. Ponuda firme Nature & Nurture je
+                  impresivno obilna i znalački odabrana. Njihove proizvode formulira farmaceutkinja i
+                  aromaterapeutkinja Sevil Agalar.
+                </p>
+                <p>
+                  Zatim, Istanbul je grad u kome postoji nevelik, ali izuzetno informativan i znalački osmišljen{' '}
+                  <a
+                    href="https://aromaterapija.info/vodjeni-nosom/muzej-parfema-u-istanbulu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-accent-600 underline hover:text-accent-800 transition-colors"
+                  >Muzej parfema</a>. Onaj u francuskom Grasseu bi mogao, na svoju korist, poneku ideju preuzeti
+                  od istanbulskog.
+                </p>
+                <p>
+                  Rezultat takvog općeprihvaćenog odnosa prema mirisu kao važnoj komponenti života je bila i
+                  činjenica da sam na tamošnjem Farmaceutskom fakultetu u okviru aromaterapijske radionice kojoj
+                  je bio cilj informirati studente o prirodnim rješenjima, mogla održati predavanje o opciji
+                  kreiranja parfema od prirodnih mirisnih materijala. Izlaganje sam popratila izložbom takvih
+                  parfema, što je svima bila iznenađujuća i sa zadovoljstvom prihvaćena dodatna atrakcija.
+                  A iz predavanja turskih profesora sam naučila o uzgoju mirisnog bilja i proizvodnji eteričnih
+                  ulja u Turskoj. Iz izlaganja stranih i turskih stručnjaka mi je bilo vrlo zanimljivo saznati o
+                  lokalnoj primjeni načela održivosti.
+                </p>
+                <p class="bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500">
+                  A atmosfera koja je vladala na edukaciji o kreiranju prirodnih parfema koju sam vodila sljedeća
+                  dva dana je apsolutno izlazila iz okvira mog dosadašnjeg profa-iskustva. Po broju polaznica/ka,
+                  količini i vrstama postavljanih pitanja, ljubaznim gestama, radosti zbog zajedničkog mirisnog
+                  iskustva, te po ulogama poslušnih učenika u koje su ušli baš svi (uključujući i
+                  polaznike-sveučilišne profesore). I po kompletnoj udubljenosti u mirisne dojmove svih prisutnih,
+                  koji su se sjatili iz cijele Turske. Nadrealno, neopisivo iskustvo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Članak: Da li je prirodni parfem održiva opcija? -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-botanical-100 overflow-hidden">
+          <button
+            class="accordion-trigger w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-botanical-50 transition-colors duration-200"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/prirodni-parfem.jpg"
+              alt=""
+              aria-hidden="true"
+              class="flex-shrink-0 w-16 h-16 rounded-xl object-cover"
+            />
+            <div class="flex-1 min-w-0">
+              <span class="block text-xs font-medium text-botanical-400 uppercase tracking-wider mb-1">
+                6. siječnja 2026.
+              </span>
+              <span class="block text-lg font-bold text-botanical-800 leading-snug">
+                Da li je prirodni parfem održiva opcija?
+              </span>
+              <span class="block text-sm text-botanical-500 mt-1 line-clamp-1">
+                Ekološki svjesni stanovnici ove naše plave točkice u svemiru znaju da smo nerazumna vrsta koja mnoge druge vrste gura prema uništenju.
+              </span>
+            </div>
+            <svg
+              class="accordion-icon flex-shrink-0 w-5 h-5 text-botanical-400 transition-transform duration-300 ml-2"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div class="accordion-content">
+            <div class="px-6 pb-8 pt-2">
+              <img
+                src="/images/prirodni-parfem.jpg"
+                alt="Prirodni parfemi – tinkture La Liberté"
+                class="w-full rounded-2xl mb-8 object-cover max-h-[500px]"
+              />
+              <div class="prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+                <p>
+                  Ekološki svjesni stanovnici ove naše plave točkice u svemiru znaju da smo nerazumna, nemilosrdna,
+                  štetočinska vrsta koja je mnoge druge vrste s kojima dijelimo gostoprimstvo planeta gurnula preko
+                  ruba opstanka. A još mnoge vrste krajnje nerazumno, ali marljivo, gura prema uništenju.
+                </p>
+                <p>
+                  Razmotrimo kako bi se kreatori prirodnih parfema trebali ponašati da bi se mirne savjesti mogli
+                  nastaviti baviti svojom djelatnošću i osigurali održivost svojih postupaka.
+                </p>
+                <p>
+                  Važno je pratiti informacije o statusu biljnih i životinjskih vrsta od kojih se proizvode mirisni
+                  materijali koji se koriste pri kreiranju. Nekoliko organizacija (npr.{' '}
+                  <a href="https://www.haop.hr/hr/sto-je-cites-i-kako-djeluje" target="_blank" rel="noopener noreferrer" class="text-accent-600 underline hover:text-accent-800 transition-colors">CITES</a>,{' '}
+                  <a href="https://hr.wikipedia.org/wiki/IUCN" target="_blank" rel="noopener noreferrer" class="text-accent-600 underline hover:text-accent-800 transition-colors">IUCN</a>) prati globalno
+                  očuvanje prirode i održivo korištenje prirodnih resursa, pa informacije možete potražiti na
+                  njihovim stranicama. Meni je izuzetno praktičan popis koji svakih pola godine objavljuje{' '}
+                  <a href="https://airmidinstitute.org/subscribe-to-the-biannual_list/" target="_blank" rel="noopener noreferrer" class="text-accent-600 underline hover:text-accent-800 transition-colors">Institut Airmid</a>,
+                  a možete ga besplatno dobiti ako se javite na priloženi link. Dostupan je na nekoliko
+                  jezika, na hrvatskom također. Popis precizno prati statuse ugroženosti vrsta i kod odlučivanja o
+                  nabavljanju materijala se možete mirno osloniti na njihove prosudbe. To je veliko olakšanje i
+                  komocija!
+                </p>
+                <p class="bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500">
+                  Pogledajmo kakva je trenutačna situacija na tržištu prirodnih mirisnih materijala. Globalno su
+                  kritično ugroženi: drvo agar, kostus, nard i sivi amber. Te mirisne materijale definitivno NE
+                  treba nabavljati, jer je praktično nemoguće doći do podataka o etičnosti neke proizvodnje, pa je
+                  odluka o njihovom korištenju potencijalno visoko problematična.
+                </p>
+                <p>
+                  Kad budete imali popis pred sobom, svakako proučite i odjeljak Nacionalno & Regionalno da vidite
+                  u kakvom su statusu ugroženi mirisni materijali u raznim dijelovima svijeta. Dobro je znati
+                  situaciju bliže svojoj lokaciji i vlastitom pragu.
+                </p>
+                <p>
+                  Oprezno treba donositi i odluku o nabavljanju materijala poput ekstrakata vanilije, tamjana,
+                  obične mire, atlaskog cedra, šumske sandalovine…
+                </p>
+                <p>
+                  Kreiranje prirodnih parfema se znatno razlikuje od kreiranja komercijalnih, sintetskih parfema.
+                  Kreatori prirodnih parfema rade s kompleksnim materijalima, a ne s pojedinačnim mirisnim
+                  molekulama koje su "alat" kreatora komercijalnih parfema.
+                </p>
+                <p>
+                  Iskusni i kompetentni kreatori prirodnih parfema koji su savladali vještinu izrade
+                  materijala-dvojnika (analoga, baza) će uz malo razmišljanja, analize mirisa i praktičnih pokušaja
+                  sigurno uspjeti pronaći odgovarajuće zamjene za materijale koje ne mogu koristiti.
+                </p>
+                <p>
+                  Danas se sve veći broj potrošača okreće prema zelenim opcijama. Brinu o tome kakve namirnice
+                  konzumiraju, kakve preparate nanose na kožu, a kakve koriste u održavanju svojih domova, pa nije
+                  više nemoguće očekivati povećan interes za prirodne parfeme.
+                </p>
+                <p>
+                  Na pitanje mogu li priroda i njezini resursi podržati prelazak na prirodnu parfimeristiku, a da
+                  se pritom poštuju ekološki standardi i pravila održivosti, bila bih sklona odgovoriti pozitivno!
+                  Naravno, uz obavezu visoke kompetencije kreatora i puno brižnosti prema okolišu. Bilo bi moguće!
+                  Veliki izazov je na vidiku.
+                </p>
+                <p class="bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500">
+                  I za kraj – domaća zadaća za kreatore prirodnih parfema: pokušajte od mirisnih materijala koje
+                  imate na raspolaganju napraviti mirisni dvojnik/analog tinkture vanilije! Sretno u traženju
+                  kombinacije koja će zadovoljiti vaš nos!
+                </p>
+                <p class="text-sm text-botanical-500 italic">
+                  p. s. Razmišljanja i sugestije o analozima/mirisima-dvojnicima možete potražiti u podpoglavlju
+                  8.3. priručnika Mirisni potpisi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Članak: Prva izložba u Hrvatskoj -->
+        <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-botanical-100 overflow-hidden">
+          <button
+            class="accordion-trigger w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-botanical-50 transition-colors duration-200"
+            aria-expanded="false"
+          >
+            <img
+              src="/images/izlozba-rijeka.jpg"
+              alt=""
+              aria-hidden="true"
+              class="flex-shrink-0 w-16 h-16 rounded-xl object-cover"
+            />
+            <div class="flex-1 min-w-0">
+              <span class="block text-xs font-medium text-botanical-400 uppercase tracking-wider mb-1">
+                7. listopada 2025.
+              </span>
+              <span class="block text-lg font-bold text-botanical-800 leading-snug">
+                Prva izložba prirodnih parfema u Hrvatskoj
+              </span>
+              <span class="block text-sm text-botanical-500 mt-1 line-clamp-1">
+                I to se dogodilo! Priređena je prva izložba prirodnih parfema u Hrvatskoj, u vili Ružić u Rijeci.
+              </span>
+            </div>
+            <svg
+              class="accordion-icon flex-shrink-0 w-5 h-5 text-botanical-400 transition-transform duration-300 ml-2"
+              fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          <div class="accordion-content">
+            <div class="px-6 pb-8 pt-2">
+              <img
+                src="/images/izlozba-rijeka.jpg"
+                alt="Prva izložba prirodnih parfema u Hrvatskoj – vila Ružić, Rijeka"
+                class="w-full rounded-2xl mb-8 object-cover max-h-[500px]"
+              />
+              <div class="prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+                <p class="text-xl font-semibold text-botanical-800">
+                  I to se dogodilo! Priređena je prva izložba prirodnih parfema u Hrvatskoj!
+                </p>
+                <p>
+                  U vili Ružić u Rijeci su se, unatoč izrazito nepovoljnim vremenskim prilikama, skupili
+                  znatiželjnici koji su željeli saznati kako kreatori prirodnih parfema mogu ilustrirati likove iz
+                  Priča iz davnine, Ivane Brlić Mažuranić. To je, naime, bio zadatak postavljen kreatorima:
+                  pročitati knjigu, izabrati lik koji žele prikazati mirisnom impresijom i u skladu s tim
+                  kreirati parfem.
+                </p>
+                <p>
+                  Događaj je besprijekorno organizirao prof. Theo de Canziani (uz svesrdnu pomoć članice
+                  kreatorske šnjof-ekipe Mirjete Žužić Vranić), skrbnik književne baštine Mažuranić-Brlić-Ružić,
+                  a dojmljivosti događaja su svesrdno doprinijeli Djevojački zbor Josip Kaplan pod ravnanjem
+                  maestre Doris Kovačić i prof. Mirjana Kajdi Žužić svojim monotipijama.
+                </p>
+                <p>
+                  Dakle, osjeti njuha, sluha i vida su nam bili dobrano i ugodno zaposleni. A da ni osjet okusa
+                  ne bude zanemaren pobrinule su se Andrea Furlan svojim šampanjcem i koktelima, te Inga Jerkin i
+                  Marija Čivčić finim kolačima.
+                </p>
+                <p>
+                  Kreatori parfema su imali nesvakidašnju i sjajnu priliku objasniti svoju stvaralačku inspiraciju
+                  i ideje znatiželjnim gostima izložbe i mislim da će dugo pamtiti ovu prigodu i iskustvo.
+                </p>
+                <p class="bg-gradient-to-r from-botanical-50 to-nature-50 p-6 rounded-2xl border-l-4 border-accent-500">
+                  Kad se spominju prirodni parfemi kreirani na našem području, treba svakako reći da imamo dvije
+                  kreatorice (Miranda Angelovski Čebron i Martina Godnič) koje su svoje parfeme registrirale na
+                  europskom tržištu! Da bi se to postiglo, trebalo je parfeme uskladiti sa strogim IFRA
+                  (International Fragrance Association) propisima. Dakle, sigurnije ne može!
+                </p>
+                <p>
+                  Izložba u vili Ružić je bila međunarodnog karaktera, jer su predstavljene parfeme kreirale osobe
+                  iz Slovenije, BiH i Hrvatske. Bio je to sjajno organiziran, nenadmašan događaj koji je
+                  intenzivno angažirao čula i, usprkos hladnoći i kiši, unosio toplinu oko srca i oplemenio
+                  nedjeljno prijepodne!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- OVDJE DODAJ SLJEDEĆE ČLANKE (kopiraj gornji blok) -->
+
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-16 flex justify-center">
+        <a
+          href="/"
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← Naslovnica
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll<HTMLButtonElement>('.accordion-trigger');
+
+    triggers.forEach(trigger => {
+      const content = trigger.nextElementSibling as HTMLElement;
+      const icon = trigger.querySelector('.accordion-icon') as HTMLElement;
+
+      trigger.addEventListener('click', () => {
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+
+        if (expanded) {
+          content.style.maxHeight = '0';
+          trigger.setAttribute('aria-expanded', 'false');
+          icon.classList.remove('rotate-180');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          trigger.setAttribute('aria-expanded', 'true');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>

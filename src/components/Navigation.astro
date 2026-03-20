@@ -24,6 +24,7 @@ const navigation = locale === 'en'
   : [
       { name: 'Naslovnica', href: `${prefix}/` },
       { name: 'Edukacija',  href: `${prefix}/edukacija/` },
+      { name: 'Novosti',    href: `${prefix}/novosti/` },
       { name: 'Događanja',  href: `${prefix}/dogadjanja/` },
       { name: 'Naruči',     href: `${prefix}/naruci/` },
     ];
@@ -34,6 +35,7 @@ const pathMappings = {
   '/edukacija/': '/en/education/',
   '/dogadjanja/': '/en/events/',
   '/naruci/': '/en/order/',
+  '/novosti/': '/en/',
   '/recenzije/': '/en/reviews/',
   '/o-prirucniku/': '/en/about-manual/',
   '/o-autorici/': '/en/about-author/',
@@ -65,7 +67,7 @@ const switchToEN = mappedPath ? (mappedPath.startsWith('/en/') ? mappedPath : `/
       <!-- Logo -->
       <div class="flex-shrink-0">
         <a href={`${prefix}/`} class="text-2xl font-bold bg-gradient-to-r from-botanical-600 to-nature-500 bg-clip-text text-transparent hover:from-botanical-700 hover:to-nature-600 transition-all duration-300">
-          Fragrant Signatures
+          {locale === 'en' ? 'Fragrant Signatures' : 'Mirisni potpisi'}
         </a>
       </div>
 
