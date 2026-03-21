@@ -14,6 +14,7 @@ const navigation = locale === 'en'
   ? [
       { name: 'Home',      href: `${prefix}/` },
       { name: 'Education', href: `${prefix}/education/` },
+      { name: 'News',      href: `${prefix}/news/` },
       { name: 'Events',    href: `${prefix}/events/` },
       { name: 'Order',     href: `${prefix}/order/` },
     ]
@@ -31,7 +32,7 @@ const pathMappings = {
   '/edukacija/': '/en/education/',
   '/dogadjanja/': '/en/events/',
   '/naruci/': '/en/order/',
-  '/novosti/': '/en/',
+  '/novosti/': '/en/news/',
   '/recenzije/': '/en/reviews/',
   '/o-prirucniku/': '/en/about-manual/',
   '/o-autorici/': '/en/about-author/',
@@ -39,6 +40,7 @@ const pathMappings = {
   '/kontakt/': '/en/contact/',
   '/pozadine/': '/en/wallpapers/',
   '/en/': '/',
+  '/en/news/': '/novosti/',
   '/en/education/': '/edukacija/',
   '/en/events/': '/dogadjanja/',
   '/en/order/': '/naruci/',

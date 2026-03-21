@@ -1,0 +1,140 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = (await getCollection('news'))
+  .filter((a) => !a.data.draft)
+  .sort((a, b) => a.data.order - b.data.order);
+
+const rendered = await Promise.all(articles.map((e) => e.render()));
+---
+
+<Layout
+  title="News - Fragrant Signatures"
+  description="Selected texts by the author of the Fragrant Signatures manual – Slobodanka Poštić. Articles on natural perfumery."
+  currentPath="/en/news"
+  lang="en"
+>
+  <style>
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+
+  <div class="min-h-screen bg-gradient-to-br from-botanical-50 via-white to-nature-50">
+    <div class="container mx-auto px-4 py-16 max-w-3xl">
+
+      <div class="text-center mb-14">
+        <h1 class="text-5xl font-bold text-botanical-800 mb-4">News</h1>
+        <p class="text-lg text-botanical-500">Texts by Slobodanka Poštić</p>
+        <div class="flex items-center justify-center mt-8">
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-botanical-300 to-transparent"></div>
+          <div class="mx-4 w-2 h-2 bg-botanical-500 rounded-full"></div>
+          <div class="flex-1 h-px bg-gradient-to-r from-transparent via-botanical-300 to-transparent"></div>
+        </div>
+      </div>
+
+      <div class="space-y-3" id="news-accordion">
+        {
+          articles.map((entry, i) => {
+            const { Content } = rendered[i];
+            return (
+              <div class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-md border border-botanical-100 overflow-hidden">
+                <button
+                  class="accordion-trigger w-full flex items-center gap-4 px-6 py-5 text-left hover:bg-botanical-50 transition-colors duration-200"
+                  aria-expanded="false"
+                >
+                  <img
+                    src={entry.data.thumbnail}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    width="64"
+                    height="64"
+                    class="flex-shrink-0 w-16 h-16 rounded-xl object-cover"
+                  />
+                  <div class="flex-1 min-w-0">
+                    <span class="block text-xs font-medium text-botanical-400 uppercase tracking-wider mb-1">
+                      {entry.data.date}
+                    </span>
+                    <span class="block text-lg font-bold text-botanical-800 leading-snug">
+                      {entry.data.title}
+                    </span>
+                    <span class="block text-sm text-botanical-500 mt-1 line-clamp-1">
+                      {entry.data.preview}
+                    </span>
+                  </div>
+                  <svg
+                    class="accordion-icon flex-shrink-0 w-5 h-5 text-botanical-400 transition-transform duration-300 ml-2"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                </button>
+
+                <div class="accordion-content">
+                  <div class="px-6 pb-8 pt-2">
+                    <img
+                      src={entry.data.thumbnail}
+                      alt={entry.data.heroAlt}
+                      loading="lazy"
+                      class="w-full rounded-2xl mb-8 object-cover max-h-[500px]"
+                    />
+                    <div class="prose prose-lg max-w-none text-ink-800 leading-relaxed space-y-6">
+                      <Content />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+
+      <div class="mt-16 flex justify-center">
+        <a
+          href="/en/"
+          class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-nature-600 to-nature-700 text-white rounded-xl hover:from-nature-700 hover:to-nature-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl font-medium"
+        >
+          ← Home
+        </a>
+      </div>
+
+    </div>
+  </div>
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const triggers = document.querySelectorAll<HTMLButtonElement>('.accordion-trigger');
+
+    triggers.forEach((trigger) => {
+      const content = trigger.nextElementSibling as HTMLElement;
+      const icon = trigger.querySelector('.accordion-icon') as HTMLElement;
+
+      trigger.addEventListener('click', () => {
+        const expanded = trigger.getAttribute('aria-expanded') === 'true';
+
+        if (expanded) {
+          content.style.maxHeight = '0';
+          trigger.setAttribute('aria-expanded', 'false');
+          icon.classList.remove('rotate-180');
+        } else {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          trigger.setAttribute('aria-expanded', 'true');
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
