@@ -187,24 +187,45 @@ const jsonLd = {
         </div>
 
         <div class="mt-8 pt-6 border-t border-botanical-200">
-          <p class="text-xs text-botanical-500 text-center leading-relaxed">
-            The world of natural perfumery is right under your nose. Discover it in{' '}
-            <em>'Fragrant Signatures: Manual for Creating Natural Perfumes'</em> by{' '}
-            <a
-              href="https://airmidinstitute.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
-              >Airmid Institute</a
-            > ambassador for Croatia,{' '}
-            <a
-              href="https://airmidinstitute.org/airmid-global-ambassadors/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
-              >Slobodanka Poštić</a
-            >.
-          </p>
+          {isEn ? (
+            <p class="text-xs text-botanical-500 text-center leading-relaxed">
+              The world of natural perfumery is right under your nose. Discover it in{' '}
+              <em>'Fragrant Signatures: Manual for Creating Natural Perfumes'</em> by{' '}
+              <a
+                href="https://airmidinstitute.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                >Airmid Institute</a
+              > ambassador for Croatia,{' '}
+              <a
+                href="https://airmidinstitute.org/airmid-global-ambassadors/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                >Slobodanka Poštić</a
+              >.
+            </p>
+          ) : (
+            <p class="text-xs text-botanical-500 text-center leading-relaxed">
+              Svijet prirodne parfumeristike vam je pred nosom! Otkrijte ga u knjizi{' '}
+              <em>'Mirisni potpisi: Priručnik za stvaranje prirodnih parfema'</em> koju je napisala{' '}
+              <a
+                href="https://airmidinstitute.org/airmid-global-ambassadors/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                >Slobodanka Poštić</a
+              >, dugogodišnja edukatorica u tom području (i ambasadorica{' '}
+              <a
+                href="https://airmidinstitute.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                >Airmid Instituta</a
+              > za Hrvatsku).
+            </p>
+          )}
           <p class="text-xs text-botanical-400 text-center mt-4">
             ©2026 Fragrant Signatures. All rights reserved.
           </p>
