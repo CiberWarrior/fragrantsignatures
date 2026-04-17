@@ -1,0 +1,94 @@
+/* Zangezi 08 — obitelj za naslove (isti font-family) */
+@font-face {
+  font-family: 'Zangezi08';
+  src: url('/fonts/Zangezi08-Semilight.otf') format('opentype');
+  font-weight: 350;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zangezi08';
+  src: url('/fonts/Zangezi08-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Zangezi08';
+  src: url('/fonts/Zangezi08-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Bitter — obitelj (kupljene varijante, ista font-family) */
+@font-face {
+  font-family: 'Bitter';
+  src: url('/fonts/Bitter-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitter';
+  src: url('/fonts/Bitter-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitter';
+  src: url('/fonts/Bitter-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Bitter';
+  src: url('/fonts/Bitter-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Bitter', Georgia, 'Times New Roman', ui-serif, serif;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: 'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif;
+    font-weight: 400;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-weight: 400;
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3,
+  .prose-lg h1,
+  .prose-lg h2,
+  .prose-lg h3 {
+    font-family: 'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif;
+    font-weight: 400;
+  }
+
+  .prose h4,
+  .prose h5,
+  .prose h6,
+  .prose-lg h4,
+  .prose-lg h5,
+  .prose-lg h6 {
+    font-weight: 400;
+  }
+}

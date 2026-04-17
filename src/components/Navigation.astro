@@ -69,7 +69,7 @@ const switchToEN = locale === 'hr' ? (mappedPath || '/en/') : currentPathNormali
       <!-- Logo — skraćen na mobile -->
       <a
         href={`${prefix}/`}
-        class="flex-shrink-0 font-bold tracking-tight bg-gradient-to-r from-botanical-700 to-nature-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200"
+        class="flex-shrink-0 font-zangezi font-normal tracking-tight bg-gradient-to-r from-botanical-700 to-nature-600 bg-clip-text text-transparent hover:opacity-80 transition-opacity duration-200"
       >
         <span class="hidden sm:inline text-xl">{locale === 'en' ? 'Fragrant Signatures' : 'Mirisni potpisi'}</span>
         <span class="sm:hidden text-base">{locale === 'en' ? 'Fragrant Signatures' : 'Mirisni potpisi'}</span>
@@ -141,7 +141,7 @@ const switchToEN = locale === 'hr' ? (mappedPath || '/en/') : currentPathNormali
         return (
           <a
             href={item.href}
-            class={`mobile-nav-link flex items-center gap-3 px-4 py-3.5 rounded-xl text-[15px] font-medium transition-colors duration-150 ${
+            class={`mobile-nav-link flex items-center gap-3 px-4 py-3.5 rounded-xl text-[15px] font-medium uppercase tracking-wide transition-colors duration-150 ${
               isActive
                 ? 'bg-botanical-50 text-botanical-700 font-semibold'
                 : 'text-botanical-700 active:bg-botanical-50'

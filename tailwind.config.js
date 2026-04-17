@@ -5,8 +5,52 @@ export default {
   ],
   theme: {
     extend: {
+      fontWeight: {
+        semilight: '350',
+      },
       fontFamily: {
-        'sans': ['Inter', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        sans: ['Bitter', 'Georgia', 'Times New Roman', 'ui-serif', 'serif'],
+        zangezi: ['Zangezi08', 'Georgia', 'Times New Roman', 'ui-serif', 'serif'],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            h1: {
+              fontFamily: "'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif",
+              fontWeight: '400',
+            },
+            h2: {
+              fontFamily: "'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif",
+              fontWeight: '400',
+            },
+            h3: {
+              fontFamily: "'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif",
+              fontWeight: '400',
+            },
+            h4: { fontWeight: '400' },
+            h5: { fontWeight: '400' },
+            h6: { fontWeight: '400' },
+          },
+        },
+        lg: {
+          css: {
+            h1: {
+              fontFamily: "'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif",
+              fontWeight: '400',
+            },
+            h2: {
+              fontFamily: "'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif",
+              fontWeight: '400',
+            },
+            h3: {
+              fontFamily: "'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif",
+              fontWeight: '400',
+            },
+            h4: { fontWeight: '400' },
+            h5: { fontWeight: '400' },
+            h6: { fontWeight: '400' },
+          },
+        },
       },
              colors: {
                'perfume': {

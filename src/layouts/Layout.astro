@@ -1,4 +1,5 @@
 ---
+import '../styles/global.css';
 import Navigation from '../components/Navigation.astro';
 
 export interface Props {
@@ -130,12 +131,6 @@ const jsonLd = {
     <link rel="alternate" hreflang="hr" href={`https://fragrant-signatures.eu${hrPath}`} />
     <link rel="alternate" hreflang="en" href={`https://fragrant-signatures.eu${enPath}`} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body class="bg-gradient-to-br from-botanical-50 via-white to-nature-50 text-botanical-900 min-h-screen">
     <Navigation currentPath={currentPath} />
@@ -143,18 +138,18 @@ const jsonLd = {
       <slot />
     </main>
 
-    <footer class="bg-gradient-to-r from-botanical-100 to-nature-100 border-t border-botanical-200">
+    <footer class="site-footer bg-gradient-to-r from-botanical-100 to-nature-100 border-t border-botanical-200 font-thin">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div class="grid md:grid-cols-2 gap-8 items-center">
           <div class="text-center md:text-left">
-            <h3 class="text-xl font-bold text-botanical-800 mb-2">Fragrant Signatures</h3>
+            <h3 class="text-xl font-zangezi font-normal text-botanical-800 mb-2">Fragrant Signatures</h3>
             <p class="text-sm text-botanical-600">
               {isEn ? 'Manual for creating natural perfumes' : 'Priručnik za kreiranje prirodnih parfema'}
             </p>
           </div>
 
           <div class="text-center">
-            <p class="text-sm text-botanical-600 mb-3">{isEn ? 'Follow us' : 'Pratite nas'}</p>
+            <p class="text-sm font-medium text-botanical-600 mb-3">{isEn ? 'Follow us' : 'Pratite nas'}</p>
             <div class="flex justify-center space-x-4">
               <a
                 href="https://www.facebook.com/groups/289513248317640"
@@ -190,38 +185,38 @@ const jsonLd = {
           {isEn ? (
             <p class="text-xs text-botanical-500 text-center leading-relaxed">
               The world of natural perfumery is right under your nose! Discover it in{' '}
-              <em>'Fragrant signatures: Manual for creating natural perfumes'</em> written by{' '}
+              <em class="font-normal italic">'Fragrant signatures: Manual for creating natural perfumes'</em> written by{' '}
               <a
                 href="https://airmidinstitute.org/airmid-global-ambassadors/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                class="font-medium text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Slobodanka Poštić</a
               >, a long-time educator in the field and ambassador of the{' '}
               <a
                 href="https://airmidinstitute.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                class="font-medium text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Airmid Institute</a
               > for Croatia.
             </p>
           ) : (
             <p class="text-xs text-botanical-500 text-center leading-relaxed">
               Svijet prirodne parfumeristike vam je pred nosom! Otkrijte ga u knjizi{' '}
-              <em>'Mirisni potpisi: Priručnik za stvaranje prirodnih parfema'</em> koju je napisala{' '}
+              <em class="font-normal italic">'Mirisni potpisi: Priručnik za stvaranje prirodnih parfema'</em> koju je napisala{' '}
               <a
                 href="https://airmidinstitute.org/airmid-global-ambassadors/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                class="font-medium text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Slobodanka Poštić</a
               >, dugogodišnja edukatorica u tom području i ambasadorica{' '}
               <a
                 href="https://airmidinstitute.org/"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                class="font-medium text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Airmid Instituta</a
               > za Hrvatsku.
             </p>
