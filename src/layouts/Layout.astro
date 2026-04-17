@@ -139,7 +139,7 @@ const jsonLd = {
   </head>
   <body class="bg-gradient-to-br from-botanical-50 via-white to-nature-50 text-botanical-900 min-h-screen">
     <Navigation currentPath={currentPath} />
-    <main>
+    <main class="pt-16">
       <slot />
     </main>
 
@@ -189,22 +189,22 @@ const jsonLd = {
         <div class="mt-8 pt-6 border-t border-botanical-200">
           {isEn ? (
             <p class="text-xs text-botanical-500 text-center leading-relaxed">
-              The world of natural perfumery is right under your nose. Discover it in{' '}
-              <em>'Fragrant Signatures: Manual for Creating Natural Perfumes'</em> by{' '}
-              <a
-                href="https://airmidinstitute.org/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
-                >Airmid Institute</a
-              > ambassador for Croatia,{' '}
+              The world of natural perfumery is right under your nose! Discover it in{' '}
+              <em>'Fragrant signatures: Manual for creating natural perfumes'</em> written by{' '}
               <a
                 href="https://airmidinstitute.org/airmid-global-ambassadors/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Slobodanka Poštić</a
-              >.
+              >, a long-time educator in the field and ambassador of the{' '}
+              <a
+                href="https://airmidinstitute.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
+                >Airmid Institute</a
+              > for Croatia.
             </p>
           ) : (
             <p class="text-xs text-botanical-500 text-center leading-relaxed">
@@ -216,14 +216,14 @@ const jsonLd = {
                 rel="noopener noreferrer"
                 class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Slobodanka Poštić</a
-              >, dugogodišnja edukatorica u tom području (i ambasadorica{' '}
+              >, dugogodišnja edukatorica u tom području i ambasadorica{' '}
               <a
                 href="https://airmidinstitute.org/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-botanical-600 hover:text-botanical-700 underline transition-colors duration-300"
                 >Airmid Instituta</a
-              > za Hrvatsku).
+              > za Hrvatsku.
             </p>
           )}
           <p class="text-xs text-botanical-400 text-center mt-4">
