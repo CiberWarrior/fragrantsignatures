@@ -1,10 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 const articles = (await getCollection('novosti')).sort((a, b) => a.data.order - b.data.order);
 
-const rendered = await Promise.all(articles.map((e) => e.render()));
+const rendered = await Promise.all(articles.map((e) => render(e)));
 ---
 
 <Layout

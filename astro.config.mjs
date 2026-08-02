@@ -1,8 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
-import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://fragrant-signatures.eu',
@@ -17,7 +17,6 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     mdx(),
-    tailwind(),
     sitemap({
       i18n: {
         defaultLocale: 'hr',
@@ -28,6 +27,9 @@ export default defineConfig({
       },
     }),
   ],
+  vite: {
+    plugins: [tailwindcss()],
+  },
   markdown: {
     shikiConfig: {
       theme: 'github-dark',

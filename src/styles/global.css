@@ -1,3 +1,112 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans: 'Bitter', Georgia, 'Times New Roman', ui-serif, serif;
+  --font-zangezi: 'Zangezi08', Georgia, 'Times New Roman', ui-serif, serif;
+  --font-weight-semilight: 350;
+
+  --color-perfume-50: #faf7ff;
+  --color-perfume-100: #f3edff;
+  --color-perfume-200: #e9d8ff;
+  --color-perfume-300: #d8b4fe;
+  --color-perfume-400: #c084fc;
+  --color-perfume-500: #a855f7;
+  --color-perfume-600: #9333ea;
+  --color-perfume-700: #7c3aed;
+  --color-perfume-800: #6b21a8;
+  --color-perfume-900: #581c87;
+
+  --color-lavender-50: #f8fafc;
+  --color-lavender-100: #f1f5f9;
+  --color-lavender-200: #e2e8f0;
+  --color-lavender-300: #cbd5e1;
+  --color-lavender-400: #94a3b8;
+  --color-lavender-500: #64748b;
+  --color-lavender-600: #475569;
+  --color-lavender-700: #334155;
+  --color-lavender-800: #1e293b;
+  --color-lavender-900: #0f172a;
+
+  --color-rose-50: #fff1f2;
+  --color-rose-100: #ffe4e6;
+  --color-rose-200: #fecdd3;
+  --color-rose-300: #fda4af;
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+  --color-rose-600: #e11d48;
+  --color-rose-700: #be123c;
+  --color-rose-800: #9f1239;
+  --color-rose-900: #881337;
+
+  --color-mint-50: #f0fdfc;
+  --color-mint-100: #ccfbf1;
+  --color-mint-200: #99f6e4;
+  --color-mint-300: #5eead4;
+  --color-mint-400: #2dd4bf;
+  --color-mint-500: #14b8a6;
+  --color-mint-600: #0d9488;
+  --color-mint-700: #0f766e;
+  --color-mint-800: #115e59;
+  --color-mint-900: #134e4a;
+
+  --color-book-50: #f0fdfd;
+  --color-book-100: #ccfbfb;
+  --color-book-200: #99f6f6;
+  --color-book-300: #5eeaea;
+  --color-book-400: #2dd4d4;
+  --color-book-500: #acdfde;
+  --color-book-600: #0d9488;
+  --color-book-700: #0f766e;
+  --color-book-800: #115e59;
+  --color-book-900: #134e4a;
+
+  --color-botanical-50: #f8f9ff;
+  --color-botanical-100: #f0f2ff;
+  --color-botanical-200: #e6e9ff;
+  --color-botanical-300: #d1d6ff;
+  --color-botanical-400: #b4bbff;
+  --color-botanical-500: #7d7fbc;
+  --color-botanical-600: #6b6da8;
+  --color-botanical-700: #5a5c94;
+  --color-botanical-800: #4a4c80;
+  --color-botanical-900: #3d3f6c;
+
+  --color-nature-50: #f0fdf4;
+  --color-nature-100: #dcfce7;
+  --color-nature-200: #bbf7d0;
+  --color-nature-300: #86efac;
+  --color-nature-400: #4ade80;
+  --color-nature-500: #077643;
+  --color-nature-600: #065f36;
+  --color-nature-700: #054829;
+  --color-nature-800: #04311c;
+  --color-nature-900: #031a0e;
+
+  --color-accent-50: #fef2f2;
+  --color-accent-100: #fee2e2;
+  --color-accent-200: #fecaca;
+  --color-accent-300: #fca5a5;
+  --color-accent-400: #f87171;
+  --color-accent-500: #ee3f30;
+  --color-accent-600: #dc2626;
+  --color-accent-700: #b91c1c;
+  --color-accent-800: #991b1b;
+  --color-accent-900: #7f1d1d;
+
+  --color-ink-50: #f8fafc;
+  --color-ink-100: #f1f5f9;
+  --color-ink-200: #e2e8f0;
+  --color-ink-300: #cbd5e1;
+  --color-ink-400: #94a3b8;
+  --color-ink-500: #64748b;
+  --color-ink-600: #475569;
+  --color-ink-700: #334155;
+  --color-ink-800: #1e293b;
+  --color-ink-900: #0f172a;
+  --color-ink-950: #000000;
+}
+
 /* Zangezi 08 — obitelj za naslove (isti font-family) */
 @font-face {
   font-family: 'Zangezi08';
@@ -50,10 +159,6 @@
   font-style: italic;
   font-display: swap;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   body {
