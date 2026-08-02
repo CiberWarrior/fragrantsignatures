@@ -65,7 +65,7 @@ Isti postupak, datoteka ide u `src/content/news/`, tekst na engleskom.
 
 ### 4. Deploy
 ```bash
-cd /Users/renata/Desktop/fragrantsignatures
+cd /Users/renchi/Documents/Cursor/fragrantsignatures
 git add .
 git commit -m "Novosti: dodaj članak 'Naslov vijesti'"
 git push origin main

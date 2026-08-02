@@ -10,7 +10,7 @@ alwaysApply: true
 1. **Uredi kod u Cursoru** — sve promjene radiš ovdje
 2. **Git push na GitHub** — u Mac Terminalu:
    ```bash
-   cd /Users/renata/Desktop/fragrantsignatures
+   cd /Users/renchi/Documents/Cursor/fragrantsignatures
    git add .
    git commit -m "opis promjena"
    git push origin main
