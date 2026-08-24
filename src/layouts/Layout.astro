@@ -133,6 +133,80 @@ const jsonLd = {
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body class="bg-gradient-to-br from-botanical-50 via-white to-nature-50 text-botanical-900 min-h-screen">
+    <script is:inline>
+      (function () {
+        var STORAGE_KEY = 'fragrant-signatures-cookie-consent';
+
+        function get() {
+          try {
+            var value = localStorage.getItem(STORAGE_KEY);
+            if (value === 'accepted' || value === 'rejected') {
+              return value;
+            }
+            return null;
+          } catch (e) {
+            return null;
+          }
+        }
+
+        function accept() {
+          try {
+            localStorage.setItem(STORAGE_KEY, 'accepted');
+          } catch (e) {}
+          window.dispatchEvent(new CustomEvent('fragrant:consent-accepted'));
+        }
+
+        function reject() {
+          try {
+            localStorage.setItem(STORAGE_KEY, 'rejected');
+          } catch (e) {}
+          window.dispatchEvent(new CustomEvent('fragrant:consent-rejected'));
+        }
+
+        window.fragrantCookieConsent = {
+          get: get,
+          accept: accept,
+          reject: reject,
+        };
+      })();
+    </script>
+    <script is:inline>
+      (function () {
+        var PIXEL_ID = '1702253418191969';
+
+        function loadMetaPixel() {
+          if (window.__fragrantMetaPixelLoaded) return;
+          if (!window.fragrantCookieConsent || window.fragrantCookieConsent.get() !== 'accepted') return;
+
+          window.__fragrantMetaPixelLoaded = true;
+
+          if (!window.fbq) {
+            var n = (window.fbq = function () {
+              n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            });
+            if (!window._fbq) window._fbq = n;
+            n.push = n;
+            n.loaded = true;
+            n.version = '2.0';
+            n.queue = [];
+            var t = document.createElement('script');
+            t.async = true;
+            t.src = 'https://connect.facebook.net/en_US/fbevents.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(t, s);
+          }
+
+          window.fbq('init', PIXEL_ID);
+          window.fbq('track', 'PageView');
+        }
+
+        if (window.fragrantCookieConsent && window.fragrantCookieConsent.get() === 'accepted') {
+          loadMetaPixel();
+        }
+
+        window.addEventListener('fragrant:consent-accepted', loadMetaPixel);
+      })();
+    </script>
     <Navigation currentPath={currentPath} />
     <main class="pt-16">
       <slot />
@@ -227,5 +301,74 @@ const jsonLd = {
         </div>
       </div>
     </footer>
+
+    <div
+      id="cookie-consent-banner"
+      class="hidden fixed bottom-0 inset-x-0 z-40 p-3 sm:p-4 pointer-events-none"
+      role="dialog"
+      aria-labelledby="cookie-consent-title"
+      aria-describedby="cookie-consent-text"
+    >
+      <div class="pointer-events-auto max-w-3xl mx-auto bg-white/95 backdrop-blur-sm border border-botanical-200 rounded-2xl shadow-xl px-4 py-4 sm:px-6 sm:py-5">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+          <div class="flex-1 min-w-0">
+            <h2 id="cookie-consent-title" class="text-base font-medium text-botanical-800 mb-1">
+              {isEn ? 'Cookies and privacy' : 'Kolačići i privatnost'}
+            </h2>
+            <p id="cookie-consent-text" class="text-sm text-botanical-600 leading-relaxed">
+              {isEn
+                ? 'This website uses essential functionality and, with your consent, marketing cookies to measure visits and advertising performance.'
+                : 'Ova stranica koristi nužne funkcionalnosti te, uz vaš pristanak, marketinške kolačiće za mjerenje posjeta i učinkovitosti oglasa.'}
+            </p>
+          </div>
+          <div class="flex gap-2 sm:flex-shrink-0">
+            <button
+              type="button"
+              id="cookie-consent-reject"
+              class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl border border-botanical-200 bg-white text-botanical-700 text-sm font-medium hover:bg-botanical-50 focus:outline-none focus:ring-2 focus:ring-botanical-400 transition-colors duration-200"
+            >
+              {isEn ? 'Reject' : 'Odbij'}
+            </button>
+            <button
+              type="button"
+              id="cookie-consent-accept"
+              class="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-gradient-to-r from-nature-600 to-nature-700 text-white text-sm font-medium shadow-md hover:from-nature-700 hover:to-nature-800 focus:outline-none focus:ring-2 focus:ring-nature-500 transition-all duration-200"
+            >
+              {isEn ? 'Accept' : 'Prihvati'}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script is:inline>
+      (function () {
+        var banner = document.getElementById('cookie-consent-banner');
+        var acceptBtn = document.getElementById('cookie-consent-accept');
+        var rejectBtn = document.getElementById('cookie-consent-reject');
+        var consent = window.fragrantCookieConsent;
+
+        function hideBanner() {
+          if (banner) banner.classList.add('hidden');
+        }
+
+        if (consent && !consent.get()) {
+          if (banner) banner.classList.remove('hidden');
+        }
+
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', function () {
+            if (consent) consent.accept();
+            hideBanner();
+          });
+        }
+
+        if (rejectBtn) {
+          rejectBtn.addEventListener('click', function () {
+            if (consent) consent.reject();
+            hideBanner();
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
