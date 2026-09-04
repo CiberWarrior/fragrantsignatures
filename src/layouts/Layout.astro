@@ -207,6 +207,37 @@ const jsonLd = {
         window.addEventListener('fragrant:consent-accepted', loadMetaPixel);
       })();
     </script>
+    <script is:inline>
+      (function () {
+        var GA_ID = 'G-ZM4GJNJT2E';
+
+        function loadGoogleAnalytics() {
+          if (window.__fragrantGaLoaded) return;
+          if (!window.fragrantCookieConsent || window.fragrantCookieConsent.get() !== 'accepted') return;
+
+          window.__fragrantGaLoaded = true;
+
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function () {
+            window.dataLayer.push(arguments);
+          };
+
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+          document.head.appendChild(s);
+
+          window.gtag('js', new Date());
+          window.gtag('config', GA_ID);
+        }
+
+        if (window.fragrantCookieConsent && window.fragrantCookieConsent.get() === 'accepted') {
+          loadGoogleAnalytics();
+        }
+
+        window.addEventListener('fragrant:consent-accepted', loadGoogleAnalytics);
+      })();
+    </script>
     <Navigation currentPath={currentPath} />
     <main class="pt-16">
       <slot />
