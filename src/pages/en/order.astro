@@ -77,4 +77,30 @@ import Layout from '../../layouts/Layout.astro';
 
     </div>
   </div>
+  <script is:inline>
+    (function () {
+      if (window.__fragrantOrderContactTracking) return;
+      window.__fragrantOrderContactTracking = true;
+
+      document.addEventListener('click', function (event) {
+        var target = event.target;
+        if (!target || !target.closest) return;
+
+        var link = target.closest('a[href^="mailto:"], a[href^="tel:"]');
+        if (!link) return;
+        if (!window.fragrantCookieConsent || window.fragrantCookieConsent.get() !== 'accepted') return;
+        if (typeof window.gtag !== 'function') return;
+
+        var href = link.getAttribute('href') || '';
+        var isEmail = href.indexOf('mailto:') === 0;
+        var eventName = isEmail ? 'email_click' : 'phone_click';
+
+        window.gtag('event', eventName, {
+          link_url: isEmail ? 'mailto:' : 'tel:',
+          page_location: window.location.origin + window.location.pathname,
+          page_path: window.location.pathname,
+        });
+      });
+    })();
+  </script>
 </Layout>
