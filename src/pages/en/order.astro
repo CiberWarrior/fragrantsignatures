@@ -102,5 +102,22 @@ import Layout from '../../layouts/Layout.astro';
         });
       });
     })();
+
+    (function () {
+      function trackOrderPageView() {
+        if (window.__fragrantOrderPageViewTracked) return;
+        if (!window.fragrantCookieConsent || window.fragrantCookieConsent.get() !== 'accepted') return;
+        if (typeof window.gtag !== 'function') return;
+
+        window.__fragrantOrderPageViewTracked = true;
+        window.gtag('event', 'order_page_view', {
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+        });
+      }
+
+      trackOrderPageView();
+      window.addEventListener('fragrant:consent-accepted', trackOrderPageView);
+    })();
   </script>
 </Layout>
