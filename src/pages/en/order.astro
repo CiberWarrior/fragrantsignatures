@@ -104,20 +104,53 @@ import Layout from '../../layouts/Layout.astro';
     })();
 
     (function () {
-      function trackOrderPageView() {
-        if (window.__fragrantOrderPageViewTracked) return;
-        if (!window.fragrantCookieConsent || window.fragrantCookieConsent.get() !== 'accepted') return;
-        if (typeof window.gtag !== 'function') return;
+      var MAX_ATTEMPTS = 40;
+      var INTERVAL_MS = 50;
+      var attempts = 0;
+      var timer = null;
+
+      function stopRetry() {
+        if (!timer) return;
+        clearInterval(timer);
+        timer = null;
+      }
+
+      function sendOrderPageView() {
+        if (window.__fragrantOrderPageViewTracked) {
+          stopRetry();
+          return true;
+        }
+        if (!window.fragrantCookieConsent || window.fragrantCookieConsent.get() !== 'accepted') return false;
+        if (typeof window.gtag !== 'function') return false;
 
         window.__fragrantOrderPageViewTracked = true;
+        stopRetry();
         window.gtag('event', 'order_page_view', {
           page_location: window.location.href,
           page_path: window.location.pathname,
         });
+        return true;
       }
 
-      trackOrderPageView();
-      window.addEventListener('fragrant:consent-accepted', trackOrderPageView);
+      function startRetry() {
+        if (window.__fragrantOrderPageViewTracked) return;
+        if (sendOrderPageView()) return;
+        if (timer) return;
+
+        attempts = 0;
+        timer = setInterval(function () {
+          attempts += 1;
+          if (sendOrderPageView() || attempts >= MAX_ATTEMPTS) {
+            stopRetry();
+          }
+        }, INTERVAL_MS);
+      }
+
+      if (window.fragrantCookieConsent && window.fragrantCookieConsent.get() === 'accepted') {
+        startRetry();
+      }
+
+      window.addEventListener('fragrant:consent-accepted', startRetry);
     })();
   </script>
 </Layout>
