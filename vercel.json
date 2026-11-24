@@ -2,5 +2,11 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
-  "framework": "astro"
+  "framework": "astro",
+  "redirects": [
+    { "source": "/kontakt", "destination": "/naruci", "permanent": true },
+    { "source": "/kontakt/", "destination": "/naruci", "permanent": true },
+    { "source": "/en/contact", "destination": "/en/order", "permanent": true },
+    { "source": "/en/contact/", "destination": "/en/order", "permanent": true }
+  ]
 }

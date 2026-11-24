@@ -38,6 +38,15 @@
         ],
         "createdAt": "2026-11-24T17:29:35.093Z",
         "reason": "existing design pattern - all page H1 titles use this gradient"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/components/Navigation.astro"
+        ],
+        "createdAt": "2026-11-24T17:34:58.744Z",
+        "reason": "existing brand logo/title gradient pattern already in Navigation; this edit only removes contact path mappings"
       }
     ]
   }

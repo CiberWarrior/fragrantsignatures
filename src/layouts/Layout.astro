@@ -23,7 +23,6 @@ const HR_TO_EN: Record<string, string> = {
   '/naruci/': '/en/order/',
   '/recenzije/': '/en/reviews/',
   '/pozadine/': '/en/wallpapers/',
-  '/kontakt/': '/en/contact/',
   '/privatnost/': '/en/privacy/',
 };
 
@@ -37,7 +36,6 @@ const EN_TO_HR: Record<string, string> = {
   '/en/order/': '/naruci/',
   '/en/reviews/': '/recenzije/',
   '/en/wallpapers/': '/pozadine/',
-  '/en/contact/': '/kontakt/',
   '/en/privacy/': '/privatnost/',
 };
 
@@ -338,8 +336,8 @@ const jsonLd = {
               {isEn ? 'Privacy Policy' : 'Pravila privatnosti'}
             </a>
             <span class="text-botanical-300">•</span>
-            <a href={isEn ? '/en/contact' : '/kontakt'} class="hover:text-botanical-700 underline transition-colors duration-300">
-              {isEn ? 'Contact' : 'Kontakt'}
+            <a href={isEn ? '/en/order' : '/naruci'} class="hover:text-botanical-700 underline transition-colors duration-300">
+              {isEn ? 'Order' : 'Naruči'}
             </a>
           </div>
         </div>
