@@ -29,6 +29,15 @@
         ],
         "createdAt": "2026-11-24T17:23:45.679Z",
         "reason": "existing design pattern - page already uses this gradient on H1, no changes to gradient"
+      },
+      {
+        "rule": "gradient-text",
+        "value": "*",
+        "files": [
+          "src/pages/en/contact.astro"
+        ],
+        "createdAt": "2026-11-24T17:29:35.093Z",
+        "reason": "existing design pattern - all page H1 titles use this gradient"
       }
     ]
   }
