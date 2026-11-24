@@ -1,0 +1,50 @@
+---
+description: Project-specific rules for Fragrant Signatures Astro website
+alwaysApply: true
+---
+
+# Project Rules: Fragrant Signatures
+
+This project is an Astro-based website for Fragrant Signatures.
+
+## Project context
+
+- The project uses Astro.
+- The site presents fragrance-related content and/or a small business/book/product website.
+- The site should remain elegant, clear, responsive, fast, and visually polished.
+- Preserve existing deployment configuration.
+- Existing Cursor rules for deploy workflow and MDX news conventions must remain respected.
+
+## Working rules
+
+- Preserve the existing Astro project structure.
+- Do not change routes unless explicitly requested.
+- Do not rename files or folders unless explicitly requested.
+- Do not introduce new libraries without asking first.
+- Prefer the smallest safe change.
+- Do not make large refactors unless explicitly requested.
+- Before editing, inspect the relevant files and understand the existing implementation.
+
+## Content and design rules
+
+- Preserve the existing visual identity unless explicitly asked to redesign it.
+- Keep copy clear, elegant, warm, and user-friendly.
+- Improve readability, spacing, visual hierarchy, responsiveness, and accessibility.
+- Do not redesign the whole site unless explicitly asked.
+- Always consider mobile responsiveness.
+- For MDX news articles, follow the existing `mdx-novosti-konvencije.mdc` rule.
+
+## Code quality
+
+- Follow the existing formatting and project conventions.
+- Keep code clean, readable, and maintainable.
+- Avoid unnecessary JavaScript.
+- Prefer simple Astro/static solutions where possible.
+- After making changes, explain what changed, which files changed, and how to test locally.
+
+## Deployment
+
+- Keep the project compatible with Vercel deployment.
+- Follow the existing `deploy-workflow.mdc` rule.
+- Do not change deployment-related files unless explicitly requested.
+- Mention if environment variables are required for any change.

@@ -23,6 +23,8 @@ const HR_TO_EN: Record<string, string> = {
   '/naruci/': '/en/order/',
   '/recenzije/': '/en/reviews/',
   '/pozadine/': '/en/wallpapers/',
+  '/kontakt/': '/en/contact/',
+  '/privatnost/': '/en/privacy/',
 };
 
 const EN_TO_HR: Record<string, string> = {
@@ -35,6 +37,8 @@ const EN_TO_HR: Record<string, string> = {
   '/en/order/': '/naruci/',
   '/en/reviews/': '/recenzije/',
   '/en/wallpapers/': '/pozadine/',
+  '/en/contact/': '/kontakt/',
+  '/en/privacy/': '/privatnost/',
 };
 
 const defaultPath = isEn ? '/en/' : '/';
@@ -329,6 +333,15 @@ const jsonLd = {
           <p class="text-xs text-botanical-400 text-center mt-4">
             ©2026 Fragrant Signatures. All rights reserved.
           </p>
+          <div class="text-xs text-botanical-500 text-center mt-3 space-x-4">
+            <a href={isEn ? '/en/privacy' : '/privatnost'} class="hover:text-botanical-700 underline transition-colors duration-300">
+              {isEn ? 'Privacy Policy' : 'Pravila privatnosti'}
+            </a>
+            <span class="text-botanical-300">•</span>
+            <a href="/kontakt" class="hover:text-botanical-700 underline transition-colors duration-300">
+              {isEn ? 'Contact' : 'Kontakt'}
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -350,6 +363,9 @@ const jsonLd = {
               {isEn
                 ? 'This website uses essential functionality and, with your consent, marketing cookies to measure visits and advertising performance.'
                 : 'Ova stranica koristi nužne funkcionalnosti te, uz vaš pristanak, marketinške kolačiće za mjerenje posjeta i učinkovitosti oglasa.'}
+              <a href={isEn ? '/en/privacy' : '/privatnost'} class="text-perfume-600 hover:text-perfume-700 underline ml-1">
+                {isEn ? 'Learn more' : 'Saznaj više'}
+              </a>
             </p>
           </div>
           <div class="flex flex-row items-center gap-2 sm:flex-shrink-0">
